@@ -1,0 +1,112 @@
+@import "~bootstrap/scss/bootstrap";
+
+.APP{
+
+    
+    height: 1vh;
+
+}
+
+.navbar{
+
+    
+    top:0;
+    .logo{
+
+        width: 160px;
+        color: aqua;
+
+    }
+
+    .links-container{
+
+        width: 250px;
+        justify-content: space-around;
+        align-items: center;
+
+        .profileBg{
+
+            background-color: rgba(201, 201, 201, 0.534);
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+
+        }
+
+    }
+
+}
+
+//signup form style
+
+.signup{
+
+    flex-wrap: wrap;
+
+    
+}
+
+
+//home style
+
+.sectoions{
+
+    height: 600px;
+
+    .cards{
+
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    .chat{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(224, 224, 224);
+        height: 100%;
+        width: 18rem;
+
+        .message-erea{
+
+            background-color: white;
+            height: 80%;
+            width: 80%;
+
+        }
+
+        .text-erea{
+
+            height: 50px;
+            width: 80%;
+            background-color: white;
+
+        }
+        
+        button{
+
+            height: 20px;
+            width: 80%;
+            background-color: crimson;
+
+        }
+
+    }
+
+}
+
+.footer{
+    
+    position: absolute;
+    bottom: 0;
+    background-color: #383D40;
+    height:80px ;
+    width: 100%;
+
+
+}
+
