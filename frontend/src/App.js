@@ -6,12 +6,13 @@ import Login from './pages/HR_PAGES/Login';
 import Signup from './pages/HR_PAGES/Signup';
 import AddEmp from './pages/HR_PAGES/AddEmp';
 import MyProfile from './pages/HR_PAGES/MyProfile';
-
+import Employee from './pages/HR_PAGES/Employee'
 //components
 import Navebar from './components/Navebar';
 import Footer from './components/Footer';
 //context 
 import { useAuthContext } from "./hooks/useAuthContext"
+
 
 
 
@@ -41,7 +42,7 @@ function App() {
                         <Route path="/hr/signup" element={<Signup/> }/>
                         <Route path="/hr/addemp" element={<AddEmp/> }/>
                         <Route path="/hr/myProfile" element={<MyProfile/> }/>
-                    
+                        <Route path="/hr/employee" element={<Employee/> }/>
 
                 </Routes>
 

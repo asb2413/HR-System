@@ -9,7 +9,7 @@ const {home} = require('../../controllers/HRcontrollers/homeController')
 const {addEmp} = require('../../controllers/HRcontrollers/empUserController')
 const {empUploads} = require('../../controllers/HRcontrollers/empUploadsController')
 const {myProfile} = require('../../controllers/HRcontrollers/myProfileController')
-const {empApi} = require('../../controllers/HRcontrollers/empApiController')
+const {empSearchApi,getAllEmp} = require('../../controllers/HRcontrollers/empApiController')
 
 
 
@@ -26,7 +26,8 @@ homeRouter.post('/addEmpUploads',upload.any(),empUploads)
 //HR profile get info api
 homeRouter.post('/myProfile',myProfile)
 //employee api for all infos 
-homeRouter.post('/employee',empApi)
+homeRouter.post('/employee',getAllEmp)
+homeRouter.post('/employee/search',empSearchApi)
 
 
 module.exports = homeRouter

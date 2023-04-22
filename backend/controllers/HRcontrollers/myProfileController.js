@@ -4,7 +4,6 @@ const myProfile = async(req,res)=>{
 
 const {id} = req.body
 
-
 try {
 
     const user_infos = await HR_USER.findOne({_id:id})
@@ -19,15 +18,7 @@ try {
     res.status(400).json({error:error.message})
 }
 
-
-
-
-
-
-
 }
-
-
 
 module.exports = {
 

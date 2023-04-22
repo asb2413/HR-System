@@ -1,22 +1,8 @@
 const EMP_USER = require('../../models/empUserModel')
 
-
-
-
-
-
-
-
-
-
- 
-
 //addEmp controller
 const addEmp = async (req,res)=>{
 
-        
-    
-    
         //taking post data from body
         const {
             
@@ -41,8 +27,6 @@ const addEmp = async (req,res)=>{
             
             } = req.body
         
-            
-
         try {
             
             const emp_user = await EMP_USER.signup(
@@ -66,27 +50,16 @@ const addEmp = async (req,res)=>{
                 emergencyPhone
                 )
 
-                
-                
-            
-
             const user_id = emp_user._id   
             res.status(200).json({user_id})
             req.id=user_id
 
         } catch (error) {
+
             res.status(400).json({error:error.message})
+
         }
 }
-
-
-
-
-
-
-
-
-
 
 module.exports = {
 

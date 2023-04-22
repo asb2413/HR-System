@@ -30,13 +30,12 @@ export const AuthContextProvider = ({children})=>{
         //useEffect to get the token every time when the user join the web page
         useEffect(()=>{
 
-            const user =JSON.parse(localStorage.getItem('user')) 
+            const user = JSON.parse(localStorage.getItem('user')) 
 
             if(user){
 
                 dispatch({type:'LOGIN',payload:user})
                 
-
             }
             
         },[])

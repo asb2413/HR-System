@@ -8,6 +8,7 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 function Home() {
 
   const {user}= useAuthContext()
+  
 
       useEffect(()=>{
 
@@ -15,7 +16,7 @@ function Home() {
 
           
           if(user){
-
+            console.log(user.token)
             const res = await fetch('/hr',{method:"POST",headers:{'Authorization':`Bearer ${user.token}`}})
             const json = await res.json()
             if(res.ok){

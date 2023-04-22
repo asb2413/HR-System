@@ -27,7 +27,8 @@ function LocalForm(props) {
     EmergencyPhone,
 
   } = useFormContext()
-    
+
+  //signup form
 if(props.path === '/hr/signup'){
 
   return (
@@ -89,6 +90,7 @@ if(props.path === '/hr/signup'){
 
 }
 
+//login form
 if(props.path === '/hr/login'){
 
   return (
@@ -119,9 +121,9 @@ if(props.path === '/hr/login'){
 
 }
 
-if(props.path === '/hr/addemp'){
 
-  
+//add employee forms
+if(props.path === '/hr/addemp'){
 
   return (
 
@@ -207,11 +209,11 @@ if(props.path === '/hr/addemp'){
 
     </Form>
     
-
+    
     <Form onSubmit={props.handelUpload}>
 
       {emp_user ?
-      
+      //uploads
       <>
       <label htmlFor="photo">upload photo</label>
       <input onChange={props.handelImg}  type="file" id="photo"  name='photo ' required/>

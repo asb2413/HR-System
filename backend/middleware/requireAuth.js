@@ -11,7 +11,7 @@ const requireAuth = async(req,res,next)=>{
 
     }
 
-    
+    //console.log(authorization.split(' ')[1])
     const token = authorization.split(' ')[1]
 
     try{
