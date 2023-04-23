@@ -1,20 +1,12 @@
 const EMP_USER = require('../../models/empUserModel')
 
-
 const getAllEmp = async(req,res)=>{
-
-    
 
 try {
 
-    const user_infos = await EMP_USER.find({})
+    const user_infos = await EMP_USER.find().select({'password':0})
     
-    
-   // delete Info[0]._doc.password
-    console.log(user_infos)
-    //delete Info._doc.password
-
-    res.status(200).json(Info._doc)
+    res.status(200).json(user_infos)
 
 } catch (error) {
 
@@ -26,13 +18,13 @@ try {
 
 const empSearchApi = async(req,res)=>{
 
-const {id} = req.body
+const {key} = req.body
 
-if(id){
-
+if(key){
+    console.log(key)
 try {
 
-    const user_infos = await EMP_USER.findOne({_id:id})
+    const user_infos = await EMP_USER.findOne({_id:key})
     const Info= {...user_infos}
     delete Info._doc.password
 
@@ -47,8 +39,6 @@ try {
 }
 
 }
-
-
 
 module.exports = {
 

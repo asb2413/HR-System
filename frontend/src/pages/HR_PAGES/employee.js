@@ -2,6 +2,8 @@ import {useQuery} from '@tanstack/react-query'
 import { useRef } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import {useGetInfo} from "../../hooks/useGetInfo"
+import SerchBar from '../../components/SerchBar';
+import EmpCard from '../../components/empCard';
 
 
 function Employee (){
@@ -10,7 +12,11 @@ function Employee (){
   */
     const {getInfo} = useGetInfo()
     const {user}= useAuthContext()
-
+    const key = useRef({key:null})
+    const type = useRef({type:'id'})
+    const url = useRef('/employee')
+    
+    //console.log(key.current)
     /*note: we use useRef for check if there is a user or not and to controll the render
      if no the useQuery will be not fecth any data
      if yes it make the useQuery enabled true so it will be fetch the data
@@ -20,25 +26,18 @@ function Employee (){
         state.current = true
     }
     
-      const id = {id:'64436fb6f3a5f62abc54fc13'}
       
-      const {data,status} = useQuery(['emp','/employee',state.current,user,id],getInfo,{enabled:state.current})
+      
+      const {data,status} = useQuery(['emp',url.current,state.current,user,key],getInfo,{enabled:state.current,refetchOnWindowFocus: false})
+      console.log(data)
       
     return ( 
 
        <div className="Employee">
-            {data &&
-            
-            <div className="info">
-            <h1>{data._id}</h1>
-            <h1>{data.username}</h1>
-            <h1>{data.email}</h1>
-            <h1>{data.phone}</h1>
-            <h1>{data.name}</h1>
-            <h1>{data.salary}</h1>
-            </div>
+
+        <SerchBar setKey={key.current} setType={type.current} setUrl={url}/>
+        <EmpCard data={data} url={url.current} />
              
-             }
        </div>
 
      );
