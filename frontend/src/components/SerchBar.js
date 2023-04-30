@@ -1,50 +1,69 @@
-import { useEffect } from 'react';
-import {Button,Form} from 'react-bootstrap';
-import Dropdown from 'react-bootstrap/Dropdown';
+import { useContext , useRef ,useState} from "react"
+import axios from 'axios'
+import { EmpContext } from "../pages/HR_PAGES/Employee"
 
 
-
-function SerchBar(props) {
-
+function SearchBar() {
+  const {empData,dispatch} = useContext(EmpContext) 
+  const user =JSON.parse(localStorage.getItem('user'))
+  const typeInput = useRef()
+  const searchInput = useRef()
+  //const [type, setType] = useState('id')
+  const type = useRef('_id')
+  const search = useRef(null)
   
 
-    const handleSubmit = (e)=>{
+  
+    const handleSubmit = async(e)=>{
       e.preventDefault()
-      props.setUrl.current = '/employee/search'
-      //console.log(props.setUrl.current)
+      
+      
+      console.log(search.current)
+      console.log(type.current)
+      try {
+
+       const res = await axios.post('http://localhost:3000/hr/employee/search',
+       {data:{[type.current]:search.current}},
+       
+       {
+
+        headers:{'Authorization':`Bearer ${user.token}`,'Content-type': 'application/json'}
+
+       })
+       
+      dispatch({type:'ONE',payload:{res,typeInput}})
+      searchInput.current.value = null
+      search.current = null  
+      } catch (error) {
+        searchInput.current.value = null
+        dispatch({type:'ONE',payload:{error:error}})
+        
+      }
+     
     }
 
-  
-
+    
+    
+    
   return (
 
     <div className="SerchBar">
-          
-    <Form onSubmit={handleSubmit}>
 
-    <Form.Group className="mb-3" controlId="identity">
-      <Form.Label>search</Form.Label>
-      <Form.Control onChange={(e)=>{props.setKey.key=e.target.value} } placeholder="Enter id, phone number or identity" />
-    </Form.Group>
-   
-   <select 
-   onChange={(e)=>{props.setType.type=e.target.value}}
-   >
-    <option value="id">ID</option>
-    <option value="phone">Phone</option>
+      <form onSubmit={handleSubmit}>
 
-   </select>
-
-    <Button variant="primary" type="submit">
-      enter
-    </Button >
-
-    </Form>
-
-  </div>
+        <input ref={searchInput}  type="text" onChange={(e)=> {search.current=e.target.value}} />
+        <select ref={typeInput} onChange={(e)=> {type.current = e.target.value}}>
+          <option value={'_id'}>id</option>
+          <option>identity</option>
+          <option>phone</option>
+        </select>
+        <button >search</button>
         
-        
+      </form>
+
+    </div>
+           
   )
 }
 
-export default SerchBar
+export default SearchBar

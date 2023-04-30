@@ -6,10 +6,9 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 
 
 function Home() {
-
-  const {user}= useAuthContext()
   
-
+  const user =JSON.parse(localStorage.getItem('user'))   
+  console.log(user)
       useEffect(()=>{
 
         const postToken= async ()=>{
@@ -17,7 +16,10 @@ function Home() {
           
           if(user){
             
-            const res = await fetch('/hr',{method:"POST",headers:{'Authorization':`Bearer ${user.token}`}})
+            const res = await fetch('/hr',
+            {method:"POST",
+            headers:{'Authorization':`Bearer ${user.token}`}}
+            )
             const json = await res.json()
             if(res.ok){
 

@@ -3,7 +3,7 @@ import { useAddEmpContext } from "./useAddEmpContext"
 
 export const useAddEmp = ()=>{
     
-    const {user} = useAuthContext()
+    const user =JSON.parse(localStorage.getItem('user'))   
     const {dispatch} = useAddEmpContext()
     
     //post data hook
@@ -20,15 +20,11 @@ export const useAddEmp = ()=>{
         const json = await res.json()
     
         if(res.ok){
-            
-            
+               
             console.log("User added successfully")
             dispatch({type:'SIGNUP',payload:json})
 
-            
-    
         }
-    
     
         if(!res.ok){
     
@@ -38,7 +34,6 @@ export const useAddEmp = ()=>{
 
     }
 
-    
     return {addEmp}
 
 }

@@ -16,12 +16,12 @@ export const useLogin = ()=>{
         const json = await res.json()
     
         if(res.ok){
-
+            
+            console.log(json)
             console.log("User logedin successfully")
             localStorage.setItem("user",JSON.stringify(json))
             dispatch({type:'LOGIN',payload:json})
             
-    
         }
     
     

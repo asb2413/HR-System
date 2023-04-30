@@ -3,7 +3,7 @@ import { useAddEmpContext } from "./useAddEmpContext"
 
 export const useEmpUploads = ()=>{
     
-    const {user} = useAuthContext()
+    const user =JSON.parse(localStorage.getItem('user'))   
     const {dispatch,emp_user} = useAddEmpContext()
 
     //post data hook

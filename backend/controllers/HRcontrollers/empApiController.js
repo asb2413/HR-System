@@ -17,16 +17,19 @@ try {
 }
 
 const empSearchApi = async(req,res)=>{
+    
 
-const {key} = req.body
+const {data} = req.body
 
-if(key){
-    console.log(key)
+if(data){
+    
 try {
 
-    const user_infos = await EMP_USER.findOne({_id:key})
+    
+    const user_infos = await EMP_USER.findOne({...data})
     const Info= {...user_infos}
     delete Info._doc.password
+    
 
     res.status(200).json(Info._doc)
 
@@ -39,6 +42,8 @@ try {
 }
 
 }
+
+
 
 module.exports = {
 

@@ -12,6 +12,8 @@ import Navebar from './components/Navebar';
 import Footer from './components/Footer';
 //context 
 import { useAuthContext } from "./hooks/useAuthContext"
+import EmpDetails from './pages/HR_PAGES/EmpDetails';
+
 
 
 
@@ -43,6 +45,8 @@ function App() {
                         <Route path="/hr/addemp" element={<AddEmp/> }/>
                         <Route path="/hr/myProfile" element={<MyProfile/> }/>
                         <Route path="/hr/employee" element={<Employee/> }/>
+                        <Route path="/hr/employee/:userId" element={<EmpDetails/> }/>
+                        
 
                 </Routes>
 

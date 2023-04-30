@@ -1,6 +1,7 @@
 const HR_USER = require('../../models/userModel')
 
 const myProfile = async(req,res)=>{
+    console.log(req.user)
 
 const {id} = req.body
 

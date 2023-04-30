@@ -1,4 +1,4 @@
-import {  createContext,useReducer ,useEffect} from "react";
+import {  createContext,useEffect,useReducer } from "react";
 
 //create new context for user auth
 export const AuthContext = createContext()
@@ -20,32 +20,18 @@ export const authReducer = (state,action)=>{
 
 }
 
-
-
 export const AuthContextProvider = ({children})=>{
 
         const [state,dispatch] = useReducer(authReducer,{user:null})
-        
 
-        //useEffect to get the token every time when the user join the web page
         useEffect(()=>{
 
-            const user = JSON.parse(localStorage.getItem('user')) 
+            const user = JSON.parse(localStorage.getItem('user'))
+            dispatch({type:'LOGIN',payload:user})
 
-            if(user){
-
-                dispatch({type:'LOGIN',payload:user})
-                
-            }
-            
         },[])
-
         
-
-       
-
 return(
-
 
 <AuthContext.Provider value={{...state,dispatch}}>
 
@@ -53,5 +39,4 @@ return(
 
 </AuthContext.Provider>)
     
-
 }

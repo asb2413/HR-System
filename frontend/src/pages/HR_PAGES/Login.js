@@ -29,7 +29,6 @@ function Login() {
   const handelSubmit = async (e)=>{
     e.preventDefault()
 
-      console.log(Username,Password)    
       const infos = {
 
         username:Username.username,
@@ -37,7 +36,7 @@ function Login() {
 
       }
 
-      console.log(infos)
+      
       //signup function accsept 2 parameters and post it to back-end for login
       await login(infos,'login')
       

@@ -1,24 +1,16 @@
 const express = require('express')
 const userRouter = express.Router()
 
-const {signup,login} = require('../../controllers/HRcontrollers/userController')
-
-
-
-
-
+const {signup,login,userData} = require('../../controllers/HRcontrollers/userController')
 
 
 // signup route
 
 userRouter.post('/signup',signup)
 
-
-
-// loin route 
+// login route 
 
 userRouter.post('/login',login)
-
 
 
 
