@@ -1,58 +1,36 @@
-import {useEffect}from 'react'
-
-import Sections from '../../components/Sections'
-import { useAuthContext } from "../../hooks/useAuthContext"
-
-
+import { useEffect } from "react";
+import Sections from "../../components/Sections";
+import '../../style/home/home.css'
 
 function Home() {
-  
-  const user =JSON.parse(localStorage.getItem('user'))   
-  console.log(user)
-      useEffect(()=>{
+  const user = JSON.parse(localStorage.getItem("user"));
 
-        const postToken= async ()=>{
 
-          
-          if(user){
-            
-            const res = await fetch('/hr',
-            {method:"POST",
-            headers:{'Authorization':`Bearer ${user.token}`}}
-            )
-            const json = await res.json()
-            if(res.ok){
-
-              console.log(json)
-
-            }
-
-            if(!res.ok){
-
-              console.log(json.error)
-
-            }
-
-          }
-          
+  useEffect(() => {
+    const postToken = async () => {
+      if (user) {
+        const res = await fetch("/hr", {
+          method: "POST",
+          headers: { Authorization: `Bearer ${user.token}` },
+        });
+        const json = await res.json();
+        if (res.ok) {
           
         }
 
-        postToken()
+        if (!res.ok) {
+          console.log(json.error);
+        }
+      }
+    };
 
+    postToken();
+  }, [user]);
 
-
-
-
-      },[user])  
-
-    return (
-
-      <div className="home">
-
-        <Sections />
-
-      </div>
-    )
-  }
-  export default Home
+  return (
+    <div className="home">
+      <Sections />
+    </div>
+  );
+}
+export default Home;

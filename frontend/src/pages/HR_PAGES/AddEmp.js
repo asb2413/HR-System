@@ -1,30 +1,21 @@
-import { useEffect, useState } from 'react'
-import { useAddEmp } from '../../hooks/useAddEmp'
-import LocalForm from '../../components/LocalForm'
-import { useFormContext } from '../../hooks/useFormStatesContext'
-import {useEmpUploads} from '../../hooks/useEmpUploads'
-
-
-
-
-
-
+import { useEffect, useState } from "react";
+import { useAddEmp } from "../../hooks/useAddEmp";
+import LocalForm from "../../components/LocalForm";
+import { useFormContext } from "../../hooks/useFormStatesContext";
+import { useEmpUploads } from "../../hooks/useEmpUploads";
+import { useAddEmpContext } from "../../hooks/useAddEmpContext";
+import '../../style/addemp/addemp.css'
 function AddEmp() {
-
-  
-
-
+ 
   //path for LocalForm
-  const [path, setPath] = useState('')
-  useEffect(()=>{
+  const [path, setPath] = useState("");
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
 
-    setPath(window.location.pathname)
+  const { addEmp } = useAddEmp();
+  const { empUpload } = useEmpUploads();
 
-  },[])
-
-  const {addEmp}=useAddEmp()
-  const {empUpload}=useEmpUploads()
-  
   const {
     Username,
     Password,
@@ -45,86 +36,64 @@ function AddEmp() {
     Salary,
     EmergencyPhone,
     Photo,
-    Contract
-  } = useFormContext()
-  
-  const handelImg=(e)=>{
+    Contract,
+  } = useFormContext();
 
-    Photo.setPhoto(e.target.files[0])
+  const handleImg = (e) => {
+    Photo.setPhoto(e.target.files[0]);
+  };
+
+  const handleContract = (e) => {
+    Contract.setContract(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const infos = {
+      username: Username.username,
+      password: Password.password,
+      email: Email.email,
+      phone: Phone.phone,
+      identity: Identity.identity,
+      age: Age.age,
+      gender: Gender.gender,
+      nationality: Nationality.nationality,
+      job: Job.job,
+      name: Name.name,
+      birthDate: BirthDate.birthDate,
+      address: Address.address,
+      degree: Degree.degree,
+      department: Department.department,
+      supervisor: Supervisor.supervisor,
+      workLocation: WorkLocation.workLocation,
+      salary: Salary.salary,
+      emergencyPhone: EmergencyPhone.emergencyPhone,
+    };
+
+    //url begin with /hr/
+    await addEmp(infos, "addEmp");
+  };
+
+  const handleUpload = async (e) => {
+    e.preventDefault();
     
-  }
-  
-  const handelContract=(e)=>{
-
-    Contract.setContract(e.target.files[0])
+    await empUpload(Photo.photo, Contract.contract, "addEmpUploads");
     
-  }
-  
-    
-
-  const handelSubmit = async (e)=>{
-    e.preventDefault()
-      
-      const infos = {
-        username:Username.username,
-        password:Password.password,
-        email:Email.email,
-        phone:Phone.phone,
-        identity:Identity.identity,
-        age:Age.age,
-        gender:Gender.gender,
-        nationality:Nationality.nationality,
-        job:Job.job,
-        name:Name.name,
-        birthDate:BirthDate.birthDate,
-        address:Address.address,
-        degree:Degree.degree,
-        department:Department.department,
-        supervisor:Supervisor.supervisor,
-        workLocation:WorkLocation.workLocation,
-        salary:Salary.salary,
-        emergencyPhone:EmergencyPhone.emergencyPhone
-      }
-      
-      
-    
-      
-      
-      //url begin with /hr/
-      await addEmp(infos,'addEmp')
-      
-      
-  }
-
-   const handelUpload = async(e)=>{
-
-    e.preventDefault()
-    await empUpload(Photo.photo,Contract.contract,'addEmpUploads')
-
-
-  }
-
-
-  
+  };
 
   return (
-
     //a lot of props data :
 
-    <div className="signup">
-
-        
-        <LocalForm
-
-        handelSubmit={handelSubmit}
-        handelImg={handelImg}
-        handelContract={handelContract}
-        handelUpload ={handelUpload }
+    <div className="addEmp">
+      <LocalForm
+        handleSubmit={handleSubmit}
+        handleImg={handleImg}
+        handleContract={handleContract}
+        handleUpload={handleUpload}
         path={path}
-        
-         />
-
+      />
     </div>
-  )
+  );
 }
-export default AddEmp
+export default AddEmp;

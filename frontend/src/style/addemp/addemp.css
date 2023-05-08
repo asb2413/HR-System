@@ -1,0 +1,153 @@
+.addEmp {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+.addEmp .add_emp {
+  width: 100%;
+  min-height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .addEmp .add_emp {
+    align-items: start;
+    min-height: 180vh;
+  }
+}
+.addEmp .add_emp input:-webkit-autofill,
+.addEmp .add_emp input:-webkit-autofill:hover,
+.addEmp .add_emp input:-webkit-autofill:focus,
+.addEmp .add_emp input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s;
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #000000 !important;
+}
+.addEmp .add_emp input::-webkit-outer-spin-button,
+.addEmp .add_emp input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.addEmp .add_emp ::-moz-selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.addEmp .add_emp ::selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.addEmp .add_emp .form_container {
+  height: 80vh;
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .addEmp .add_emp .form_container {
+    align-items: start;
+    min-height: 230vh;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .addEmp .add_emp .form_container {
+    align-items: start;
+    min-height: 230vh;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .addEmp .add_emp .form_container {
+    align-items: start;
+    min-height: 220vh;
+    width: 80%;
+  }
+}
+.addEmp .add_emp .form_container ._1 {
+  height: 20px;
+}
+.addEmp .add_emp .form_container ._1 .jsonMsg {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+.addEmp .add_emp .form_container ._1 .jsonMsg span {
+  color: white;
+}
+.addEmp .add_emp .form_container .container-fluid {
+  width: 70%;
+  padding: 0;
+}
+.addEmp .add_emp .form_container .container-fluid .form-label {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 18px;
+  background-color: white;
+  font-size: 15px;
+  transform: translate(15px, 10px);
+  font-weight: 500;
+  color: #00334e;
+  border-left: 7px solid rgb(255, 255, 255);
+  border-right: 7px solid rgb(255, 255, 255);
+}
+.addEmp .add_emp .form_container .container-fluid input {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #878889;
+}
+.addEmp .add_emp .form_container .container-fluid input :focus {
+  border-color: #878889;
+}
+.addEmp .add_emp .form_container .container-fluid ._8 {
+  margin-top: 10px;
+}
+.addEmp .add_emp .form_container .container-fluid ._8 button {
+  width: 100%;
+  background-color: #00334e;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+.addEmp .add_emp .form_container .container-fluid #empPortal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #878889;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.addEmp .upload-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 70%;
+  background-color: white;
+  border-radius: 15px;
+}
+.addEmp .upload-form .btn {
+  width: 60%;
+  background-color: #00334e;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+.addEmp .upload-form .mb-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addEmp .upload-form .mb-3 label {
+  color: #00334e;
+  font-weight: 700;
+}
+.addEmp .upload-form .mb-3 input {
+  border-color: #00334e;
+}/*# sourceMappingURL=addemp.css.map */

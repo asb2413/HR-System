@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
 import App from './App';
+import "./index.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 //context
 import { AuthContextProvider } from './context/HR-context/authContext'
 import { FormContextProvider } from './context/HR-context/formContext'

@@ -1,17 +1,13 @@
-import { FormContext } from '../context/HR-context/formContext'
-import { useContext } from 'react'
+import { FormContext } from "../context/HR-context/formContext";
+import { useContext } from "react";
 
-export const useFormContext = ()=>{
+export const useFormContext = () => {
+  //consoming context hook
+  const context = useContext(FormContext);
 
-    //consoming context hook
-    const context = useContext(FormContext)
+  if (!context) {
+    throw Error("useAuthContext must be use inside  AuthContextProvider");
+  }
 
-    if(!context){
-
-        throw Error('useAuthContext must be use inside  AuthContextProvider')
-
-    }
-
-    return context
-
-}
+  return context;
+};

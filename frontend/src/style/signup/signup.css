@@ -1,0 +1,143 @@
+.signup {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .signup {
+    align-items: start;
+    min-height: 180vh;
+  }
+}
+.signup input:-webkit-autofill,
+.signup input:-webkit-autofill:hover,
+.signup input:-webkit-autofill:focus,
+.signup input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s;
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #000000 !important;
+}
+.signup ::-moz-selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.signup ::selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.signup .form_container {
+  height: 90vh;
+  width: 50%;
+  background-color: white;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .signup .form_container {
+    align-items: start;
+    min-height: 160vh;
+    width: 80%;
+  }
+}
+.signup .form_container .top_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9%;
+  background-color: #00334E;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .signup .form_container .top_bar {
+    height: 5%;
+  }
+}
+.signup .form_container .top_bar h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  font-size: 2.2vw;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .signup .form_container .top_bar h1 {
+    font-size: 3.5vw;
+  }
+}
+.signup .form_container ._1 {
+  height: 20px;
+}
+.signup .form_container ._1 .jsonMsg {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+.signup .form_container ._1 .jsonMsg span {
+  color: white;
+}
+.signup .form_container .container-fluid {
+  width: 70%;
+  padding: 0;
+}
+.signup .form_container .container-fluid .form-label {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 18px;
+  background-color: white;
+  font-size: 15px;
+  transform: translate(15px, 10px);
+  font-weight: 500;
+  color: #00334E;
+  border-left: 7px solid rgb(255, 255, 255);
+  border-right: 7px solid rgb(255, 255, 255);
+}
+.signup .form_container .container-fluid input {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #878889;
+}
+.signup .form_container .container-fluid input :focus {
+  border-color: #878889;
+}
+.signup .form_container .container-fluid ._7 {
+  margin-top: 10px;
+}
+.signup .form_container .container-fluid ._7 button {
+  width: 100%;
+  background-color: #00334E;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+.signup .form_container .container-fluid ._8 {
+  margin-top: 20px;
+}
+.signup .form_container .container-fluid ._8 a {
+  text-decoration: none;
+}
+.signup .form_container .container-fluid #empPortal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #878889;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.signup .form_container .container-fluid #loginBtn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #00334E;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
+}/*# sourceMappingURL=signup.css.map */

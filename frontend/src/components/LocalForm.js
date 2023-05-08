@@ -1,12 +1,14 @@
-import {Button,Form} from 'react-bootstrap'
-import { useFormContext } from '../hooks/useFormStatesContext'
-import { useAddEmpContext } from "../hooks/useAddEmpContext"
-
+import { Link } from "react-router-dom";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { useFormContext } from "../hooks/useFormStatesContext";
+import { useAddEmpContext } from "../hooks/useAddEmpContext";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 function LocalForm(props) {
   //form context
-  const {emp_user}= useAddEmpContext()
+  const { emp_user } = useAddEmpContext();
   const {
-
     Username,
     Password,
     Email,
@@ -25,217 +27,844 @@ function LocalForm(props) {
     WorkLocation,
     Salary,
     EmergencyPhone,
-
-  } = useFormContext()
+  } = useFormContext();
 
   //signup form
-if(props.path === '/hr/signup'){
+  if (props.path === "/hr/signup") {
+    return (
+      <Form className="form_container" onSubmit={props.handleSubmit}>
+        <div className="top_bar">
+          <h1>Create Account</h1>
+          <h1>{props.error}</h1>
+        </div>
 
-  return (
+        <Container fluid>
+          <Row className=" _1">
+            <Col >
+              {props.jsonMsg === "Thanks For Signup" && (
+                <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                  <span>{props.jsonMsg}</span>
+                </div>
+              )}
 
-    <div className="form">
+              {props.jsonMsg !== "Thanks For Signup" && (
+                <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                  <span>{props.jsonMsg}</span>
+                </div>
+              )}
+            </Col>
+          </Row>
+          <Row className=" _2">
+            <Col className="col" sm={12} md={6}>
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label> Full Name</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Name.setName(e.target.value);
+                  }}
+                  value={Name.name}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="phone">
+                <Form.Label>Phone</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Phone.setPhone(e.target.value);
+                  }}
+                  value={Phone.phone}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
-    <Form  className=' signup' onSubmit={props.handelSubmit} >
-      <Form.Group className="mb-3" controlId="username">
-        <Form.Label>username</Form.Label>
-        <Form.Control onChange={(e)=>{Username.setUsername(e.target.value)}} value={Username.username} type="username" placeholder="Enter username" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control onChange={(e)=>{Password.setPassword(e.target.value)}} value={Password.password} type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="email">
-        <Form.Label>email</Form.Label>
-        <Form.Control onChange={(e)=>{Email.setEmail(e.target.value)}} value={Email.email} type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="phone">
-        <Form.Label>phone</Form.Label>
-        <Form.Control onChange={(e)=>{Phone.setPhone(e.target.value)}} value={Phone.phone} type="phone" placeholder="Enter phone" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="name">
-        <Form.Label>name</Form.Label>
-        <Form.Control onChange={(e)=>{Name.setName(e.target.value)}} value={Name.name} type="name" placeholder="Enter name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="identity">
-        <Form.Label>identity</Form.Label>
-        <Form.Control onChange={(e)=>{Identity.setIdentity(e.target.value)}} value={Identity.identity} type="identity" placeholder="Enter identity" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="nationality">
-        <Form.Label>nationality</Form.Label>
-        <Form.Control onChange={(e)=>{Nationality.setNationality(e.target.value)}} value={Nationality.nationality} type="nationality" placeholder="Enter nationality" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="job">
-        <Form.Label>Job title</Form.Label>
-        <Form.Control onChange={(e)=>{Job.setJob(e.target.value)}} value={Job.job} type="Job" placeholder="Enter Job" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="age">
-        <Form.Label>age</Form.Label>
-        <Form.Control onChange={(e)=>{Age.setAge(e.target.value)}} value={Age.age} type="age" placeholder="Enter age" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="gender">
-        <Form.Label>gender</Form.Label>
-        <Form.Control onChange={(e)=>{Gender.setGender(e.target.value)}} value={Gender.gender} type="gender" placeholder="Enter gender"  />
-      </Form.Group>
+          <Row className=" _3">
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="username">
+                <Form.Label> Username</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Username.setUsername(e.target.value);
+                  }}
+                  value={Username.username}
+                  type="text"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Password.setPassword(e.target.value);
+                  }}
+                  value={Password.password}
+                  type="password"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
-      
-     
-      <Button  variant="primary" type="submit">
-        signup
-      </Button >
+          <Row className=" _4">
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Email.setEmail(e.target.value);
+                  }}
+                  value={Email.email}
+                  type="email"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="identity">
+                <Form.Label>Identity</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Identity.setIdentity(e.target.value);
+                  }}
+                  value={Identity.identity}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
-    </Form>
+          <Row className=" _5">
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="nationality">
+                <Form.Label>Nationality</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Nationality.setNationality(e.target.value);
+                  }}
+                  value={Nationality.nationality}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="job">
+                <Form.Label>Job Title</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Job.setJob(e.target.value);
+                  }}
+                  value={Job.job}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row className=" _6">
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="age">
+                <Form.Label>Age</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Age.setAge(e.target.value);
+                  }}
+                  value={Age.age}
+                  type="age"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Form.Group className="mb-3" controlId="gender">
+                <Form.Label>Gender</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Gender.setGender(e.target.value);
+                  }}
+                  value={Gender.gender}
+                  type="gender"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row className="_7">
+            <Col className="col" md={12}>
+              <Button variant="primary" type="submit">
+                SignUp
+              </Button>
+            </Col>
+          </Row>
+          <Row className=" _8">
+            <Col className="col" xs={12} md={6}>
+              <Link to={"/hr/login"}>
+                <Button id="loginBtn" variant="primary">
+                  Login
+                </Button>
+              </Link>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Link to={"#"}>
+                <Button id="empPortal" variant="primary">
+                  Employee
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </Form>
+    );
+  }
 
-    </div>
-  )
+  //login form
+  if (props.path === "/hr/login") {
+    return (
+      <Form className="form_container" onSubmit={props.handleSubmit}>
+        <div className="top_bar">
+          <h1>Login</h1>
+        </div>
+        <Container fluid>
+        <Row className=" _1">
+            <Col >
 
+              {props.jsonMsg !== "Logedin" && (
+                <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                  <span>{props.jsonMsg}</span>
+                </div>
+              )}
+            </Col>
+          </Row>
+          <Row className=" _2">
+            <Col className="col" xs={12} md={12}>
+              <Form.Group className="mb-3" controlId="username">
+                <Form.Label> Username</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Username.setUsername(e.target.value);
+                  }}
+                  value={Username.username}
+                  type="text"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className=" _3">
+            <Col className="col" xs={12} md={12}>
+              <Form.Group className="mb-3" controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Password.setPassword(e.target.value);
+                  }}
+                  value={Password.password}
+                  type="password"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className="_7">
+            <Col className="col" md={12}>
+              <Button variant="primary" type="submit">
+                Login
+              </Button>
+            </Col>
+          </Row>
+          <Row className=" _8">
+            <Col className="col" xs={12} md={6}>
+              <Link to={"/hr/signup"}>
+                <Button id="signUpBtn" variant="primary">
+                  SignUp
+                </Button>
+              </Link>
+            </Col>
+            <Col className="col" xs={12} md={6}>
+              <Link to={"#"}>
+                <Button id="empPortal" variant="primary">
+                  Employee
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </Form>
+    );
+  }
+
+  //add employee forms
+  if (props.path === "/hr/addemp") {
+    return (
+      <div className="add_emp">
+       {!emp_user ?  
+      <Form className="form_container" onSubmit={props.handleSubmit}>
+        
+        <Container fluid>
+          <Row className=" _1">
+            <Col >
+              {props.jsonMsg === "Thanks For Signup" && (
+                <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                  <span>{props.jsonMsg}</span>
+                </div>
+              )}
+
+              {props.jsonMsg !== "Thanks For Signup" && (
+                <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                  <span>{props.jsonMsg}</span>
+                </div>
+              )}
+            </Col>
+          </Row>
+          <Row className=" _2">
+            <Col className="col" sm={12} md={4}>
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label> Full Name</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Name.setName(e.target.value);
+                  }}
+                  value={Name.name}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="phone">
+                <Form.Label>Phone</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Phone.setPhone(e.target.value);
+                  }}
+
+                  type="number"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g);
+                  }}
+                  value={Phone.phone}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Email.setEmail(e.target.value);
+                  }}
+                  
+                  value={Email.email}
+                  type="email"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className=" _3">
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="username">
+                <Form.Label> Username</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Username.setUsername(e.target.value);
+                  }}
+                  value={Username.username}
+                  type="text"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Password.setPassword(e.target.value);
+                  }}
+                  value={Password.password}
+                  type="password"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="identity">
+                <Form.Label>Identity</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Identity.setIdentity(e.target.value);
+                  }}
+                  value={Identity.identity}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className=" _4">
+          <Col className="col" xs={12}  md={4}>
+              <Form.Group className="mb-3" controlId="nationality">
+                <Form.Label>Nationality</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Nationality.setNationality(e.target.value);
+                  }}
+                  value={Nationality.nationality}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12}  md={4}>
+              <Form.Group className="mb-3" controlId="birthDate">
+                <Form.Label>Birth Date</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    BirthDate.setBirthDate(e.target.value);
+                  }}
+                  value={BirthDate.birthDate}
+                  autoComplete="off"
+                  className=" date shadow-none"
+                  type="date"
+                  min="1940-01-01" max="2040-12-31"
+                  
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12}  md={4}>
+              <Form.Group className="mb-3" controlId="address">
+                <Form.Label>Address</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Address.setAddress(e.target.value);
+                  }}
+                  value={Address.address}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            
+          </Row>
+          <Row className=" _5">
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="age">
+                <Form.Label>Age</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Age.setAge(e.target.value);
+                  }}
+
+                  type="number"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g);
+                  }}
+                  value={Age.age}
+                  
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="gender">
+                <Form.Label>Gender</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Gender.setGender(e.target.value);
+                  }}
+                  value={Gender.gender}
+                  type="gender"
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="emergencyPhone">
+                <Form.Label>Phone 2</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    EmergencyPhone.setEmergencyPhone(e.target.value);
+                  }}
+
+                  type="number"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g);
+                  }}
+                  value={EmergencyPhone.emergencyPhone}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row className=" _6">
+           
+          <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="job">
+                <Form.Label>Job Title</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Job.setJob(e.target.value);
+                  }}
+                  value={Job.job}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="degree">
+                <Form.Label>Degree</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Degree.setDegree(e.target.value);
+                  }}
+                  value={Degree.degree}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="department">
+                <Form.Label>Department </Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Department.setDepartment(e.target.value);
+                  }}
+                  value={Department.department}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className=" _7">
+          <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="supervisor">
+                <Form.Label>Supervisor</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Supervisor.setSupervisor(e.target.value);
+                  }}
+                  value={Supervisor.supervisor}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="workLocation">
+                <Form.Label>Location</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    WorkLocation.setWorkLocation(e.target.value);
+                  }}
+                  value={WorkLocation.workLocation}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col className="col" xs={12} md={4}>
+              <Form.Group className="mb-3" controlId="salary">
+                <Form.Label>Salary</Form.Label>
+                <Form.Control
+                  onChange={(e) => {
+                    Salary.setSalary(e.target.value);
+                  }}
+
+                  type="number"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g);
+                  }}
+                  value={Salary.salary}
+                  autoComplete="off"
+                  className="shadow-none"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row className="_8">
+            <Col className="col" md={12}>
+              <Button variant="primary" type="submit">
+                Add Employee
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </Form>: 
+            //uploads
+            <Form className="upload-form" onSubmit={props.handleUpload}>
+              <Form.Group  className="mb-3">
+              <Form.Label>Upload Employee Photo</Form.Label>
+              <Form.Control type="file"
+                 onChange={props.handleImg}
+                className="shadow-none"  
+                id="photo"
+                accept="image/*"
+                name="photo "
+                required
+
+              />
+              </Form.Group>
+              <Form.Group  className="mb-3">
+              <Form.Label>Upload Employee Contract</Form.Label>
+              <Form.Control type="file" 
+
+                onChange={props.handleContract}
+                className="shadow-none"
+                accept="application/pdf"
+                id="contract"
+                name="contract"
+                required
+
+              />
+              </Form.Group>
+              <Button  type="submit">
+                Upload
+              </Button>
+       
+              </Form>}
+              </div>
+         
+    );
+  }
+
+  if (props.comp === "addPayroll") {
+    return (
+      <Form onSubmit={props.handleSubmit}>
+        <Form.Group className="mb-3" controlId="baseSalary">
+          <Form.Label>Base Salary</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.baseSalary(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter Base Salary"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="allowances">
+          <Form.Label>Allowances</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.allowances(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter Allowances"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="overtime">
+          <Form.Label>Overtime</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.overtime(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter Allowances"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="reward">
+          <Form.Label>Reward</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.reward(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter Reward"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="else">
+          <Form.Label>
+            {" "}
+            Any other value ("recommended": type an explanation in the notes
+            below){" "}
+          </Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.Else(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter the value"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date">
+          <Form.Label>Date</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.date(e.target.value);
+            }}
+            type="text"
+            placeholder="Enter Date"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="total">
+          <Form.Label>Total</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              props.total(e.target.value);
+            }}
+            type="number"
+            placeholder="Enter Date"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g);
+            }}
+            required
+          />
+
+          <InputGroup id="notes">
+            <InputGroup.Text>Notes</InputGroup.Text>
+            <Form.Control
+              onChange={(e) => {
+                props.note(e.target.value);
+              }}
+              as="textarea"
+              aria-label="With textarea"
+            />
+          </InputGroup>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          add
+        </Button>
+      </Form>
+    );
+  }
+
+  if (props.comp === "addAttendance") {
+    return (
+      <form onSubmit={props.handleSubmit}>
+        <label htmlFor="day">day</label>
+        <input
+          type="text"
+          id="day"
+          onChange={(e) => {
+            props.day(e.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="date">date</label>
+        <input
+          type="date"
+          id="date"
+          onChange={(e) => {
+            props.date(e.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="time">time</label>
+        <input
+          type="text"
+          id="time"
+          onChange={(e) => {
+            props.time(e.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="overtime">overtime</label>
+        <input
+          type="text"
+          id="overtime"
+          onChange={(e) => {
+            props.overtime(e.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="note">note</label>
+        <textarea
+          type="text"
+          id="note"
+          onChange={(e) => {
+            props.note(e.target.value);
+          }}
+        />
+        <Button type="submit">add</Button>
+      </form>
+    );
+  }
 }
-
-//login form
-if(props.path === '/hr/login'){
-
-  return (
-
-      <div className="form">
-      
-    <Form onSubmit={props.handelSubmit}>
-
-    <Form.Group className="mb-3" controlId="username">
-      <Form.Label>Username</Form.Label>
-      <Form.Control onChange={(e)=>{Username.setUsername(e.target.value)}} value={Username.username} type="username" placeholder="Enter username" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="password">
-      <Form.Label>Password</Form.Label>
-      <Form.Control onChange={(e)=>{Password.setPassword(e.target.value)}} value={Password.password} type="password" placeholder="Password" />
-    </Form.Group>
-
-    <Button  variant="primary" type="submit">
-      login
-    </Button >
-
-    </Form>
-
-  </div>
-
-    
-  )
-
-}
-
-
-//add employee forms
-if(props.path === '/hr/addemp'){
-
-  return (
-
-    <div className="form">
-
-    <Form  className='add' onSubmit={props.handelSubmit} >
-      <Form.Group className="mb-3" controlId="username">
-        <Form.Label>username</Form.Label>
-        <Form.Control onChange={(e)=>{Username.setUsername(e.target.value)}} value={Username.username} type="username" placeholder="Enter username" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control onChange={(e)=>{Password.setPassword(e.target.value)}} value={Password.password} type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="email">
-        <Form.Label>email</Form.Label>
-        <Form.Control onChange={(e)=>{Email.setEmail(e.target.value)}} value={Email.email} type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="phone">
-        <Form.Label>phone</Form.Label>
-        <Form.Control onChange={(e)=>{Phone.setPhone(e.target.value)}} value={Phone.phone} type="phone" placeholder="Enter phone" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="name">
-        <Form.Label>full name</Form.Label>
-        <Form.Control onChange={(e)=>{Name.setName(e.target.value)}} value={Name.name} type="text" placeholder="Enter name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Birth Date">
-        <Form.Label>Birth Date</Form.Label>
-        <Form.Control onChange={(e)=>{BirthDate.setBirthDate(e.target.value)}} value={BirthDate.birthDate} type="Date" placeholder="Enter Birth Date" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Address">
-        <Form.Label>Address</Form.Label>
-        <Form.Control onChange={(e)=>{Address.setAddress(e.target.value)}} value={Address.address} type="text" placeholder="Enter Addresse" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="identity">
-        <Form.Label>identity</Form.Label>
-        <Form.Control onChange={(e)=>{Identity.setIdentity(e.target.value)}} value={Identity.identity} type="identity" placeholder="Enter identity" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="nationality">
-        <Form.Label>nationality</Form.Label>
-        <Form.Control onChange={(e)=>{Nationality.setNationality(e.target.value)}} value={Nationality.nationality} type="nationality" placeholder="Enter nationality" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="age">
-        <Form.Label>age</Form.Label>
-        <Form.Control onChange={(e)=>{Age.setAge(e.target.value)}} value={Age.age} type="age" placeholder="Enter age" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="gender">
-        <Form.Label>gender</Form.Label>
-        <Form.Control onChange={(e)=>{Gender.setGender(e.target.value)}} value={Gender.gender} type="gender" placeholder="Enter gender"  />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="job">
-        <Form.Label>Job title</Form.Label>
-        <Form.Control onChange={(e)=>{Job.setJob(e.target.value)}} value={Job.job} type="Job" placeholder="Enter Job" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Degree">
-        <Form.Label>Degree</Form.Label>
-        <Form.Control onChange={(e)=>{Degree.setDegree(e.target.value)}} value={Degree.degree} type="text" placeholder="Enter Degree" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Department">
-        <Form.Label>Department</Form.Label>
-        <Form.Control onChange={(e)=>{Department.setDepartment(e.target.value)}} value={Department.department} type="text" placeholder="Enter Department" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Supervisor">
-        <Form.Label>Supervisor</Form.Label>
-        <Form.Control onChange={(e)=>{Supervisor.setSupervisor(e.target.value)}} value={Supervisor.supervisor} type="text" placeholder="Enter Supervisor" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="WorkLocation">
-        <Form.Label>Work Location</Form.Label>
-        <Form.Control onChange={(e)=>{WorkLocation.setWorkLocation(e.target.value)}} value={WorkLocation.workLocation} type="text" placeholder="Enter Work Location" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Salary">
-        <Form.Label>Salary</Form.Label>
-        <Form.Control onChange={(e)=>{Salary.setSalary(e.target.value)}} value={Salary.salary} type="text" placeholder="Enter Salary" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="EmergencyPhone">
-        <Form.Label>EmergencyPhone</Form.Label>
-        <Form.Control onChange={(e)=>{EmergencyPhone.setEmergencyPhone(e.target.value)}} value={EmergencyPhone.emergencyPhone} type="text" placeholder="Enter EmergencyPhone" />
-      </Form.Group>
-    
-      <Button  variant="primary" type="submit">
-       add
-      </Button >
-
-    </Form>
-    
-    
-    <Form onSubmit={props.handelUpload}>
-
-      {emp_user ?
-      //uploads
-      <>
-      <label htmlFor="photo">upload photo</label>
-      <input onChange={props.handelImg}  type="file" id="photo"  name='photo ' required/>
-      <label htmlFor="contract">upload contract</label>
-      <input onChange={props.handelContract}  type="file" id="contract"  name='contract' required/>
-      <Button  variant="primary" type="submit">
-       upload
-      </Button >
-      </> : null
-
-      }
-      
-
-    </Form>
-
-    </div>
-
-  )
-
-}
-
-
-  
-}
-export default LocalForm
+export default LocalForm;

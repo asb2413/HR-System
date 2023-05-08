@@ -1,0 +1,127 @@
+.login {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover,
+.login input:-webkit-autofill:focus,
+.login input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s;
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #000000 !important;
+}
+.login ::-moz-selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.login ::selection {
+  background-color: rgba(0, 51, 78, 0.1725490196);
+}
+.login .form_container {
+  height: 70vh;
+  width: 40%;
+  background-color: white;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 600px) {
+  .login .form_container {
+    width: 70%;
+  }
+}
+.login .form_container .top_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9%;
+  background-color: #00334E;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+.login .form_container .top_bar h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  font-size: 2.2vw;
+  margin: 0;
+}
+.login .form_container ._1 {
+  height: 20px;
+}
+.login .form_container ._1 .jsonMsg {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+.login .form_container ._1 .jsonMsg span {
+  color: white;
+}
+.login .form_container .container-fluid {
+  margin-top: 70px;
+  width: 70%;
+  padding: 0;
+}
+.login .form_container .container-fluid .form-label {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 18px;
+  background-color: white;
+  font-size: 15px;
+  transform: translate(15px, 10px);
+  font-weight: 500;
+  color: #00334E;
+  border-left: 7px solid rgb(255, 255, 255);
+  border-right: 7px solid rgb(255, 255, 255);
+}
+.login .form_container .container-fluid input {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #878889;
+  margin-bottom: 20px;
+}
+.login .form_container .container-fluid input :focus {
+  border-color: #878889;
+}
+.login .form_container .container-fluid ._7 {
+  margin-top: 20px;
+}
+.login .form_container .container-fluid ._7 button {
+  width: 100%;
+  background-color: #00334E;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+.login .form_container .container-fluid ._8 {
+  margin-top: 30px;
+}
+.login .form_container .container-fluid ._8 a {
+  text-decoration: none;
+}
+.login .form_container .container-fluid #empPortal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #878889;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.login .form_container .container-fluid #signUpBtn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #00334E;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
+}/*# sourceMappingURL=login.css.map */

@@ -1,33 +1,20 @@
+export const useSignup = () => {
+  //post the data hook
+  const signup = async (infos, URL,setjsonMsg) => {
+    const res = await fetch(`/hr/${URL}`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(infos),
+    });
+    const json = await res.json();
 
-export const useSignup = ()=>{
-    
-    //post the data hook
-    const signup = async (infos,URL)=>{
-        
-        
-        const res = await fetch(`/hr/${URL}`,{
-            method:'POST',
-            headers: {'Content-type': 'application/json' },
-            body:JSON.stringify(infos)
-    
-        })
-        const json = await res.json()
-    
-        if(res.ok){
-    
-            console.log("User added successfully")
-            
-    
-        }
-    
-    
-        if(!res.ok){
-    
-            console.log(json.error)
-            
-        }
-
+    if (json.message) {
+      setjsonMsg('Thanks For Signup');
     }
-    return {signup}
 
-}
+    if (json.error) {
+      setjsonMsg(json.error);
+    }
+  };
+  return { signup };
+};

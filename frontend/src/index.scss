@@ -1,112 +1,192 @@
-@import "~bootstrap/scss/bootstrap";
-
-.APP{
-
-    
-    height: 1vh;
-
+* {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
 }
 
-.navbar{
-
-    
-    top:0;
-    .logo{
-
-        width: 160px;
-        color: aqua;
-
-    }
-
-    .links-container{
-
-        width: 250px;
-        justify-content: space-around;
-        align-items: center;
-
-        .profileBg{
-
-            background-color: rgba(201, 201, 201, 0.534);
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-
-        }
-
-    }
-
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-//signup form style
-
-.signup{
-
-    flex-wrap: wrap;
-
-    
-}
-
-
-//home style
-
-.sectoions{
-
-    height: 600px;
-
-    .cards{
-
-        height: 100%;
+.APP {
+  background-color: #e9ebec;
+  //navbar style here
+  .navbar {
+    background-color: #00334e;
+    .container {
+      max-width: 100%;
+      margin: 0;
+      .left-group {
+        width: 15%;
         display: flex;
-        justify-content: space-around;
         align-items: center;
+        justify-content: space-between;
+        .line{
 
-    }
+            background-color: #E44444;
+            width: 1px;
+            height: 35px;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
 
-    .chat{
+        }
+        .logo {
+          a {
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 15px;
+              background-color: white;
+            }
+          }
+        }
+
+        .pageName{
+
+            span{
+                font-family: "Roboto", sans-serif;
+                color:#E44444 ;
+
+            }
+
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
+
+        }
+      }
+
+      .right-group{
+
+        width: 25%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
         align-items: center;
-        background-color: rgb(224, 224, 224);
-        height: 100%;
-        width: 18rem;
-
-        .message-erea{
-
-            background-color: white;
-            height: 80%;
-            width: 80%;
-
-        }
-
-        .text-erea{
-
-            height: 50px;
-            width: 80%;
-            background-color: white;
-
-        }
+        column-gap: 30%;
         
-        button{
+    @media only screen and (max-width: 1000px) {
+        column-gap: 20%;
+        width: 40%;
+      }
+        .text-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+        .line{
 
-            height: 20px;
-            width: 80%;
-            background-color: crimson;
+            background-color: #E44444;
+            width: 1px;
+            height: 35px;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
 
         }
 
-    }
+        .text{
+            font-family: "Roboto", sans-serif;
+            color: white;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
+        }
 
-}
+        .username{
+
+                font-family: "Roboto", sans-serif;
+                color: white;
+                font-weight: 400;
+                text-transform: uppercase;
+
+        }
+
+        .logout{
+
+            display: flex;
+            align-items: center;
+            column-gap: 1px;
+            
+            
+                img{
+                    width: 20px; 
+                    height: 20px;
+                    
+                    
+                }
+
+                span{
+
+                    font-family: "Roboto", sans-serif;
+                    color: #E44444;
+                    font-size: 16px;
+                    cursor:context-menu;
+
+                }
+
+            
+            
+        }
+      }
+    }
+  }
+  //footer style here
 
 .footer{
-    
-    position: absolute;
-    bottom: 0;
-    background-color: #383D40;
-    height:80px ;
-    width: 100%;
 
+  background-color: #00334e;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-around;
+
+  .left-group{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .social{
+    
+      img{
+        margin: 10px;
+        width: 25px;
+        height: 25px;
+
+      }
+      
+
+    }
+
+    span{
+
+      color: white;
+      font-size: 11px;
+
+    }
+
+  }
+
+  .right-group{
+
+    display: flex;
+    align-items:flex-end;
+    span{
+      color: white;
+      font-size: 11px;
+      text-align: center;
+
+    }
+  }
+  
 
 }
-
+}

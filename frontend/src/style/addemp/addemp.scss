@@ -1,0 +1,187 @@
+.addEmp {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  
+
+  .add_emp {
+    width: 100%;
+    min-height: 84vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 767px) {
+      align-items: start;
+      min-height: 180vh;
+    }
+
+    //for input autofill style
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s;
+      -webkit-text-fill-color: #000000 !important;
+    }
+
+    //input type number style
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+
+    //for selection color
+    ::selection {
+      background-color: #00334e2c;
+    }
+
+    .form_container {
+      height: 80vh;
+      width: 90%;
+      background-color: white;
+      border-radius: 15px;
+      @media only screen and (max-width: 767px) {
+        align-items: start;
+        min-height: 230vh;
+        width: 80%;
+      }
+      @media only screen and (max-width: 767px) {
+        align-items: start;
+        min-height: 230vh;
+        width: 80%;
+      }
+      
+
+      @media only screen and (max-width: 600px) {
+        align-items: start;
+        min-height: 220vh;
+        width: 80%;
+      }
+
+      
+
+      //jsonmsg
+      ._1 {
+        height: 20px;
+
+        .jsonMsg {
+          display: flex;
+          justify-content: center;
+          border-radius: 15px;
+
+          span {
+            color: white;
+          }
+        }
+      }
+
+      // grid container
+      .container-fluid {
+        width: 70%;
+        padding: 0;
+        
+
+        //label style
+        .form-label {
+          margin: 0;
+          width: fit-content;
+          height: 18px;
+          background-color: white;
+          font-size: 15px;
+          transform: translate(15px, 10px);
+          font-weight: 500;
+          color: #00334e;
+          border-left: 7px solid rgb(255, 255, 255);
+          border-right: 7px solid rgb(255, 255, 255);
+        }
+
+        //input style
+        input {
+          border-style: solid;
+          border-width: 2px;
+          border-color: #878889;
+          :focus {
+            border-color: #878889;
+          }
+        }
+
+        //add button style
+        ._8 {
+          margin-top: 10px;
+
+          button {
+            width: 100%;
+            background-color: #00334e;
+            border: none;
+            font-size: 20px;
+            font-weight: 400;
+          }
+        }
+
+        //Employee Portal button
+        #empPortal {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          background-color: #878889;
+          border: none;
+          height: 30px;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .upload-form{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 70%;
+    background-color: white;
+    border-radius: 15px;
+    .btn{
+
+        width: 60%;
+        background-color: #00334e;
+        border: none;
+        font-size: 20px;
+        font-weight: 400;
+
+    }
+    .mb-3{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label{
+
+        color: #00334e;
+        font-weight: 700;
+        
+
+    }
+    input{
+
+        border-color: #00334e;
+
+    }
+
+   
+
+    }
+
+  }
+
+}
+
+//create account text

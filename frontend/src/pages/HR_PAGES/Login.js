@@ -1,62 +1,39 @@
-import { useState, useEffect } from 'react'
-import { useLogin } from '../../hooks/useLogin'
-import LocalForm from '../../components/LocalForm'
-import { useFormContext } from '../../hooks/useFormStatesContext'
-
-
-
+import { useState, useEffect } from "react";
+import { useLogin } from "../../hooks/useLogin";
+import LocalForm from "../../components/LocalForm";
+import { useFormContext } from "../../hooks/useFormStatesContext";
+import '../../style/Login/login.css'
 function Login() {
+  //jsonMsg
+  const [jsonMsg, setjsonMsg] = useState(null)
 
-  
-  const {login} = useLogin()
-  
+  const { login } = useLogin();
+
   //path for LocalForm
-  const [path, setPath] = useState('')
-  useEffect(()=>{
-
-    setPath(window.location.pathname)
-
-  },[])
+  const [path, setPath] = useState("");
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
 
   //form context
-  const {
+  const { Username, Password } = useFormContext();
 
-    Username,
-    Password,
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  } = useFormContext()
+    const infos = {
+      username: Username.username,
+      password: Password.password,
+    };
 
-  const handelSubmit = async (e)=>{
-    e.preventDefault()
-
-      const infos = {
-
-        username:Username.username,
-        password:Password.password
-
-      }
-
-      
-      //signup function accsept 2 parameters and post it to back-end for login
-      await login(infos,'login')
-      
-
-
-  }
+    //signup function accsept 2 parameters and post it to back-end for login
+    await login(infos, "login",setjsonMsg);
+  };
 
   return (
-
     <div className="login">
-
-
-    <LocalForm
-
-    handelSubmit={handelSubmit}
-    path={path}
-
-    />
-
-     </div>
-  )
+      <LocalForm handleSubmit={handleSubmit} path={path} jsonMsg={jsonMsg}/>
+    </div>
+  );
 }
-export default Login
+export default Login;

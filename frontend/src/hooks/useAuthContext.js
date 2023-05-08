@@ -1,16 +1,13 @@
-import {AuthContext} from '../context/HR-context/authContext'
-import { useContext } from 'react'
+import { AuthContext } from "../context/HR-context/authContext";
+import { useContext } from "react";
 
-export const useAuthContext = ()=>{
-//consoming context hook
-    const context = useContext(AuthContext)
+export const useAuthContext = () => {
+  //consoming context hook
+  const context = useContext(AuthContext);
 
-    if(!context){
+  if (!context) {
+    throw Error("useAuthContext must be use inside  AuthContextProvider");
+  }
 
-        throw Error('useAuthContext must be use inside  AuthContextProvider')
-
-    }
-
-    return context
-
-}
+  return context;
+};

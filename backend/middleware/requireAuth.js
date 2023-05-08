@@ -1,35 +1,24 @@
-const jwt = require('jsonwebtoken')
-const HR_USER = require('../models/userModel')
-const requireAuth = async(req,res,next)=>{
+const jwt = require("jsonwebtoken");
+const HR_USER = require("../models/userModel");
+const requireAuth = async (req, res, next) => {
+  //verify auth
+  const { authorization } = req.headers;
 
-    //verify auth
-    const {authorization} = req.headers
+  if (!authorization) {
+    return res.status(401).json("auth token required");
+  }
 
-    if(!authorization){
+  //console.log(authorization.split(' ')[1])
+  const token = authorization.split(" ")[1];
 
-        return res.status(401).json('auth token required')
+  try {
+    const { _id } = jwt.verify(token, process.env.JWT_PASSWORD);
+    req.user = await HR_USER.findOne({ _id }).select("_id");
+    next();
+  } catch (error) {
+    console.log(error);
+    res.status(401).json({ error: "requist is not auth" });
+  }
+};
 
-    }
-
-    //console.log(authorization.split(' ')[1])
-    const token = authorization.split(' ')[1]
-
-    try{
-
-       const {_id} = jwt.verify(token,process.env.JWT_PASSWORD)
-       req.user = await HR_USER.findOne({_id}).select('_id')
-       next()
-
-    }catch(error){
-
-        console.log(error)
-        res.status(401).json({error:'requist is not auth'})
-
-    }
-
-    
-
-}
-
-
-module.exports = requireAuth
+module.exports = requireAuth;

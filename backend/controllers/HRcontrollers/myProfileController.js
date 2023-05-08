@@ -1,28 +1,21 @@
-const HR_USER = require('../../models/userModel')
+const HR_USER = require("../../models/userModel");
 
-const myProfile = async(req,res)=>{
-    console.log(req.user)
+const myProfile = async (req, res) => {
+  console.log(req.user);
 
-const {id} = req.body
+  const { id } = req.body;
 
-try {
+  try {
+    const user_infos = await HR_USER.findOne({ _id: id });
+    const Info = { ...user_infos };
+    delete Info._doc.password;
 
-    const user_infos = await HR_USER.findOne({_id:id})
-    const Info= {...user_infos}
-    delete Info._doc.password
-    
-    
-    res.status(200).json(Info._doc)
-
-} catch (error) {
-
-    res.status(400).json({error:error.message})
-}
-
-}
+    res.status(200).json(Info._doc);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 module.exports = {
-
-    myProfile
-
-}
+  myProfile,
+};

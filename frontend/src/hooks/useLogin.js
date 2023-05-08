@@ -1,39 +1,27 @@
-import { useAuthContext } from "./useAuthContext"
-export const useLogin = ()=>{
+import { useAuthContext } from "./useAuthContext";
+export const useLogin = () => {
+  //post the data and get the token
+  const { dispatch } = useAuthContext();
+  const login = async (infos, URL,setjsonMsg) => {
+    const res = await fetch(`/hr/${URL}`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(infos),
+    });
 
-    //post the data and get the token 
-    const {dispatch} = useAuthContext()
-    const login = async(infos,URL)=>{
+    const json = await res.json();
 
-        const res = await fetch(`/hr/${URL}`,{
-
-            method: 'POST',
-            headers: {'Content-type': 'application/json' },
-            body:JSON.stringify(infos)
-    
-        })
-        
-        const json = await res.json()
-    
-        if(res.ok){
-            
-            console.log(json)
-            console.log("User logedin successfully")
-            localStorage.setItem("user",JSON.stringify(json))
-            dispatch({type:'LOGIN',payload:json})
-            
-        }
-    
-    
-        if(!res.ok){
-    
-            console.log(json)
-    
-        }
-
+    if (json.token) {
+      
+      localStorage.setItem("user", JSON.stringify(json));
+      dispatch({ type: "LOGIN", payload: json });
+      
     }
 
-    return {login}
+    if (json.error) {
+      setjsonMsg(json.error)
+    }
+  };
 
-
-}
+  return { login };
+};
