@@ -61,7 +61,7 @@ const ShowAttendance = (props) => {
                 <td>{attendance.overtime}</td>
                 <td>{attendance.note}</td>
                 <td>
-                  <Button onClick={(e) => handlesubmit(e, attendance._id)}>
+                  <Button style={{backgroundColor:'#00334E',color:"white",border:'none'}} onClick={(e) => handlesubmit(e, attendance._id)}>
                     Delete
                   </Button>
                 </td>

@@ -1,0 +1,138 @@
+.empDetails {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+  font-family: "Roboto", sans-serif;
+  background-color: #E9EBEC;
+  margin: 0;
+  padding: 0;
+  height: 86.5vh;
+  display: flex;
+  align-items: center;
+}
+.empDetails .sidebar {
+  border-left: 20px solid #00334E;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CDCDCD;
+  width: 400px;
+  height: 100%;
+}
+.empDetails .sidebar .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 20%;
+}
+.empDetails .sidebar .info svg {
+  color: #00334E;
+  border-radius: 50px;
+  background-color: #E4E4E4;
+  height: 80px;
+  width: 80px;
+}
+.empDetails .sidebar .info span {
+  color: #00334E;
+}
+.empDetails .sidebar .info .username {
+  font-weight: 800;
+  font-size: 24px;
+}
+.empDetails .sidebar .info .id {
+  font-weight: 900;
+  font-size: 12px;
+}
+.empDetails .sidebar .sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+  width: 80%;
+}
+.empDetails .sidebar .sidebar-container .header {
+  display: flex;
+  align-items: center;
+}
+.empDetails .sidebar .sidebar-container .header svg {
+  width: 40px;
+  height: 40px;
+  color: #00334E;
+}
+.empDetails .sidebar .sidebar-container .header span {
+  font-weight: 900;
+  font-size: 22px;
+  color: #00334E;
+}
+.empDetails .sidebar .sidebar-container .button {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  padding-left: 15px;
+  width: 60%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #00334E;
+}
+@media only screen and (max-width: 1700px) {
+  .empDetails .sidebar .sidebar-container .button {
+    width: 80%;
+    font-size: 15px;
+  }
+}
+.empDetails .sidebar .sidebar-container .payroll {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.empDetails .sidebar .sidebar-container .attendance {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.empDetails .sidebar .sidebar-container .request {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.empDetails .sidebar .sidebar-container .empInfo {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.empDetails .container {
+  height: 70%;
+  overflow-x: auto;
+}
+.empDetails .container .ShowEmpProfile {
+  height: 100%;
+}
+.empDetails .container .ShowEmpProfile .container {
+  background-color: #dadada;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.empDetails .container .ShowEmpProfile .container span {
+  background-color: #00334e;
+  border-radius: 8px;
+  width: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+.empDetails .active {
+  color: white !important;
+  background-color: #00334E;
+}/*# sourceMappingURL=empDetails.css.map */

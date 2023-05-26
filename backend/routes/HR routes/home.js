@@ -22,6 +22,8 @@ const {
   addAttendance,
   attendanceApi,
   deleteAttendance,
+  requestApi,
+  updateRequest
 } = require("../../controllers/HRcontrollers/empApiController");
 
 //middleware
@@ -47,5 +49,7 @@ homeRouter.post("/employee/attendance/add", addAttendance);
 homeRouter.post("/employee/attendance/show", attendanceApi);
 homeRouter.delete("/employee/attendance/delete", deleteAttendance);
 //requests api
+homeRouter.post("/employee/request/show", requestApi);
+homeRouter.patch("/employee/request/update", updateRequest);
 
 module.exports = homeRouter;

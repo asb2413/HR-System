@@ -768,7 +768,7 @@ function LocalForm(props) {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="date">
-          <Form.Label>Date</Form.Label>
+          <Form.Label>Date from to</Form.Label>
           <Form.Control
             onChange={(e) => {
               props.date(e.target.value);
@@ -804,7 +804,7 @@ function LocalForm(props) {
             />
           </InputGroup>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button  style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none'}} variant="primary" type="submit">
           add
         </Button>
       </Form>
@@ -813,9 +813,10 @@ function LocalForm(props) {
 
   if (props.comp === "addAttendance") {
     return (
-      <form onSubmit={props.handleSubmit}>
-        <label htmlFor="day">day</label>
-        <input
+      <Form onSubmit={props.handleSubmitAtt}>
+        <Form.Group className="mb-3" controlId="date">
+        <Form.Label>day</Form.Label>
+        <Form.Control
           type="text"
           id="day"
           onChange={(e) => {
@@ -823,9 +824,10 @@ function LocalForm(props) {
           }}
           required
         />
-        <br />
-        <label htmlFor="date">date</label>
-        <input
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date">
+        <Form.Label>date</Form.Label>
+        <Form.Control
           type="date"
           id="date"
           onChange={(e) => {
@@ -833,19 +835,21 @@ function LocalForm(props) {
           }}
           required
         />
-        <br />
-        <label htmlFor="time">time</label>
-        <input
-          type="text"
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date">
+        <Form.Label>time</Form.Label>
+        <Form.Control
+          type="time"
           id="time"
           onChange={(e) => {
             props.time(e.target.value);
           }}
           required
         />
-        <br />
-        <label htmlFor="overtime">overtime</label>
-        <input
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date">
+        <Form.Label htmlFor="overtime">overtime</Form.Label>
+        <Form.Control
           type="text"
           id="overtime"
           onChange={(e) => {
@@ -853,17 +857,20 @@ function LocalForm(props) {
           }}
           required
         />
-        <br />
-        <label htmlFor="note">note</label>
-        <textarea
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date">
+        <Form.Label htmlFor="note">note</Form.Label>
+        <Form.Control
           type="text"
+          as="textarea"
           id="note"
           onChange={(e) => {
             props.note(e.target.value);
           }}
         />
-        <Button type="submit">add</Button>
-      </form>
+        </Form.Group>
+        <Button  style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none'}} type="submit">add</Button>
+      </Form>
     );
   }
 }

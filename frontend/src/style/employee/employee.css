@@ -2,7 +2,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
   font-family: "Roboto", sans-serif;
   width: 100%;
-  min-height: 84vh;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,8 @@
   width: 80%;
   height: 75vh;
   border-radius: 25px;
+  display: flex;
+  justify-content: center;
 }
 .employee .EmpCard .container {
   width: 70%;
@@ -144,6 +146,157 @@
 }
 .employee .EmpCard .container .box .card :hover {
   text-decoration: underline;
+}
+.employee .EmpCard .result-container {
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  border: 10px solid #00334e;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: auto;
+  row-gap: 3%;
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+}
+.employee .EmpCard .result-container .SerchBar {
+  margin-top: 3%;
+  width: 90%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar {
+    width: 90%;
+  }
+}
+.employee .EmpCard .result-container .SerchBar .search-form {
+  width: 100%;
+  display: flex;
+  -moz-column-gap: 1px;
+       column-gap: 1px;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar .search-form {
+    flex-wrap: wrap;
+  }
+}
+.employee .EmpCard .result-container .SerchBar .search-form .input-group {
+  width: 80%;
+  border: 2px solid #b7b7b7;
+  border-radius: 9px;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar .search-form .input-group {
+    width: 100%;
+  }
+}
+.employee .EmpCard .result-container .SerchBar .search-form .input-group .search-input {
+  border-radius: 9px;
+  border: none;
+  width: 70%;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar .search-form .input-group .search-input {
+    width: 100%;
+  }
+}
+.employee .EmpCard .result-container .SerchBar .search-form .input-group .form-select {
+  color: #00334e;
+  border: 2px solid #b7b7b7;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  background-color: rgba(0, 51, 78, 0.0666666667);
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar .search-form .input-group .form-select {
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+  }
+}
+.employee .EmpCard .result-container .SerchBar .search-form .btn {
+  background-color: #00334e;
+  height: 44px;
+  width: 20%;
+  border-radius: 9px;
+  border: 0;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .SerchBar .search-form .btn {
+    width: 100%;
+  }
+}
+.employee .EmpCard .result-container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  text-decoration: none;
+  color: #00334e;
+}
+@media only screen and (max-width: 769px) {
+  .employee .EmpCard .result-container .box {
+    width: 90%;
+  }
+}
+.employee .EmpCard .result-container .box .card {
+  height: 80%;
+  border: 3px solid #00334E !important;
+}
+.employee .EmpCard .result-container .box .card .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  background-color: #F6F6F6;
+}
+.employee .EmpCard .result-container .box .card .card-header svg {
+  border-radius: 50px;
+  background-color: #E4E4E4;
+  height: 80px;
+  width: 80px;
+}
+.employee .EmpCard .result-container .box .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  height: 40%;
+}
+.employee .EmpCard .result-container .box .card .card-body .card-title {
+  font-size: 16px;
+}
+.employee .EmpCard .result-container .box .card .card-body .card-text {
+  font-size: 6px;
+  font-weight: 700;
+}
+.employee .EmpCard .result-container .box .card :hover {
+  text-decoration: underline;
+}
+.employee .EmpCard .result-container .backBtn {
+  width: 60%;
+  height: 44px;
+  background-color: #00334E;
+  border: none;
+}
+.employee .EmpCard .result-container .error-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50px;
+  background-color: #00334E;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 15px;
 }
 .employee .EmpCard ::-webkit-scrollbar {
   width: 10px;

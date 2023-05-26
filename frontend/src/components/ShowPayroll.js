@@ -38,6 +38,7 @@ const ShowPayroll = (props) => {
 
   return (
     <div className="ShowPayroll">
+      
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -69,8 +70,8 @@ const ShowPayroll = (props) => {
                 <td>{payroll.total}</td>
                 <td>{payroll.note}</td>
                 <td>
-                  <Button onClick={(e) => handlesubmit(e, payroll._id)}>
-                    delete
+                  <Button style={{backgroundColor:'#00334E',color:"white",border:'none'}} onClick={(e) => handlesubmit(e, payroll._id)}>
+                  Delete
                   </Button>
                 </td>
               </tr>

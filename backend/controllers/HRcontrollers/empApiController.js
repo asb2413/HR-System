@@ -128,7 +128,37 @@ const attendanceApi = async (req, res) => {
   }
 };
 
-const requestApi = async (req, res) => {};
+const requestApi = async (req, res) => {
+
+  const { emp_id } = req.body;
+  
+  if (emp_id) {
+    
+    try {
+      const request = await REQUEST.find({ emp_id });
+      res.status(200).json(request);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+
+};
+
+const updateRequest = async (req,res)=>{
+  const { data, reqStatus,action_user} = req.body;
+  
+
+if (data && reqStatus && action_user) {
+    try {
+
+      await REQUEST.findByIdAndUpdate(data, { reqStatus: reqStatus, hr_id:action_user });
+      res.status(200).json("updated");
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+
+}
 
 module.exports = {
   empSearchApi,
@@ -140,4 +170,5 @@ module.exports = {
   addAttendance,
   deleteAttendance,
   requestApi,
+  updateRequest,
 };

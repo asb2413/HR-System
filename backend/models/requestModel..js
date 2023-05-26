@@ -6,16 +6,15 @@ const requestSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+    hr_id: {
+      type: String,
+      default:''
+    },
     type: {
       type: String,
       required: true,
     },
 
-    date: {
-      type: String,
-      required: true,
-    },
 
     details: {
       type: String,
@@ -25,6 +24,7 @@ const requestSchema = new mongoose.Schema(
     reqStatus: {
       type: String,
     },
+
   },
   { timestamps: true }
 );
@@ -33,7 +33,6 @@ requestSchema.statics.attendance = async function (
   emp_id,
   hr_id,
   type,
-  date,
   details,
   reqStatus
 ) {
@@ -45,7 +44,6 @@ requestSchema.statics.attendance = async function (
     emp_id,
     hr_id,
     type,
-    date,
     details,
     reqStatus,
   });

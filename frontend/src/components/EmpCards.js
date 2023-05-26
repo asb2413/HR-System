@@ -9,29 +9,18 @@ import { IoArrowBackCircle } from "react-icons/io5";
 function EmpCard() {
   const { empData, dispatch, data } = useContext(EmpContext);
 
-  if (empData && empData.error) {
-    console.log(empData.error);
-  }
   const handleClick = () => {
     dispatch({ type: "ALL", payload: data });
 
-    if (empData && empData.typeInput) {
-    }
   };
 
-  return (
-    <div className="EmpCard">
-      <div
-        className={
-          empData && (empData.res || empData.error)  
-            ? "result-container"
-            : "container"
-        }
-      >
+  if(empData && empData.length > 1 ){
+
+    return(
+      <div className="EmpCard">
+        <div className="container">
         <SearchBar />
-        {empData &&
-          empData.length > 1 &&
-          empData.map((emp) => (
+        {empData.map((emp) => (
             <Link key={emp._id} to={`/hr/employee/${emp._id}`} className="box">
               <Card border="secondary" style={{ width: "18rem" }}>
                 <Card.Header>
@@ -44,39 +33,55 @@ function EmpCard() {
               </Card>
             </Link>
           ))}
-
-        {empData && empData.res && (
-          
-          <div className="result">
-          <Link to={`/hr/employee/${empData.res.data._id}`}>
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header>
-                <ImUserTie />
-              </Card.Header>
-              <Card.Body>
-                <Card.Title>{empData.res.data.name}</Card.Title>
-                <Card.Text>{empData.res.data._id}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Link>
-          <Button onClick={handleClick}>
-          <IoArrowBackCircle />
-        </Button>
-        
-          
-          <p>key of the search not correct</p>
-          <button onClick={handleClick}>
-            <IoArrowBackCircle />
-          </button>
-        
         
         </div>
-       
-        ) }
-      </div>
+        </div>
       
      
-    </div>
-  );
+    )
+
+  }
+
+  if(empData && empData.res){
+
+    return(
+    <div className="EmpCard">
+    <div className="result-container">
+    <SearchBar />
+    <Link  to={`/hr/employee/${empData.res.data._id}`} className="box">
+    <Card border="secondary" style={{ width: "18rem" }}>
+      <Card.Header>
+        <ImUserTie />
+      </Card.Header>
+      <Card.Body>
+        <Card.Title>{empData.res.data.name}</Card.Title>
+        <Card.Text>{empData.res.data._id}</Card.Text>
+      </Card.Body>
+    </Card>
+  </Link>
+  <Button className="backBtn" onClick={handleClick}>Back</Button>
+
+</div>
+</div>
+    )
+  }
+
+  if(empData && empData.error){
+
+    return(
+
+      <div className="EmpCard">
+    <div className="result-container">
+    <SearchBar />
+    <span className="error-text">search key is not correct</span>
+  <Button className="backBtn" onClick={handleClick}>Back</Button>
+
+</div>
+</div>
+
+    )
+
+  }
+  
 }
 export default EmpCard;

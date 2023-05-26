@@ -2,7 +2,7 @@ const HR_USER = require("../../models/userModel");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.JWT_PASSWORD, { expiresIn: "7d" });
+  return jwt.sign({ _id }, process.env.JWT_PASSWORD, { expiresIn: "30d" });
 };
 
 //signup controller
