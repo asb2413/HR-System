@@ -23,7 +23,7 @@ const Request = (props) => {
     console.log(request_id,e.target.value)
     try {
       const res = await axios.patch(
-        "http://localhost:3000/hr/employee/request/update",
+        "https://hr-system-production.up.railway.app/hr/employee/request/update",
         { data: request_id,reqStatus:e.target.value,action_user:user.Username},
         {
           headers: {

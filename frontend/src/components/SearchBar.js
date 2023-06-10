@@ -18,7 +18,7 @@ function SearchBar() {
     
     try {
       const res = await axios.post(
-        "http://localhost:3000/hr/employee/search",
+        "https://hr-system-production.up.railway.app/hr/employee/search",
         { data: { [type.current]: search.current } },
 
         {

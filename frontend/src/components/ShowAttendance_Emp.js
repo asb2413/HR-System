@@ -13,7 +13,7 @@ const ShowAttendance_Emp = (props) => {
     try {
       
       const res = await axios.post(
-        "http://localhost:3000/emp/empdetails/attendance",
+        "https://hr-system-production.up.railway.app/emp/empdetails/attendance",
         { data:  id },
     
         {

@@ -27,7 +27,7 @@ const EmpDetails_emp = () => {
     try {
       
       const res = await axios.post(
-        "http://localhost:3000/emp/empdetails/empInfoApi",
+        "https://hr-system-production.up.railway.app/emp/empdetails/empInfoApi",
         { data:  id },
     
         {
@@ -70,7 +70,7 @@ const EmpDetails_emp = () => {
         
         try {
           const res = await axios.post(
-            "http://localhost:3000/emp/empdetails/requests/add",
+            "https://hr-system-production.up.railway.app/emp/empdetails/requests/add",
             { data: reqData },
     
             {

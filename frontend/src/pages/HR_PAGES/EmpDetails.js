@@ -125,7 +125,7 @@ const EmpDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/hr/employee/attendance/add",
+        "https://hr-system-production.up.railway.app/hr/employee/attendance/add",
         { data: Attdata },
 
         {

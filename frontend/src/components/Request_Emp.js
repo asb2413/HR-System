@@ -19,7 +19,7 @@ const Request_Emp = (props) => {
     try {
       
       const res = await axios.post(
-        "http://localhost:3000/emp/empdetails/requests",
+        "https://hr-system-production.up.railway.app/emp/empdetails/requests",
         { data:  id },
     
         {
