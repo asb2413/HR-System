@@ -44,6 +44,7 @@ const signup = async (req, res) => {
 //login controller
 const login = async (req, res) => {
   //taking post data from body
+  
   const { username, password } = req.body;
 
   try {

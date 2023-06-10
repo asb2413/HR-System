@@ -1,5 +1,6 @@
 const express = require("express");
 const server = express();
+const cors = require('cors')
 require("dotenv").config();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -8,6 +9,13 @@ const homeRouter = require("./routes/HR routes/home");
 const empUserRouter = require("./routes/EMP routes/user");
 const EmphomeRouter = require("./routes/EMP routes/home");
 server.use(express.json());
+server.use(cors({
+
+  origin:"*",
+  credentials:true,
+
+}))
+server.use
 //hr routes
 server.use("/hr", userRouter);
 server.use("/hr", homeRouter);
