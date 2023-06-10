@@ -7,6 +7,7 @@ const createToken = (_id) => {
 
 //signup controller
 const signup = async (req, res) => {
+  console.log(req.path)
   //taking post data from body
   const {
     username,
