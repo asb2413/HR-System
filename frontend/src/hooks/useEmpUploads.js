@@ -12,7 +12,7 @@ export const useEmpUploads = () => {
     formData.append("contract", contract);
     formData.append("id", JSON.stringify(emp_user));
 
-    const res = await fetch(`/hr/${URL}`, {
+    const res = await fetch(`https://hr-system-production.up.railway.app/hr/${URL}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${user.token}` },
       body: formData,

@@ -1,7 +1,7 @@
 export const useGetInfo = () => {
   const getInfo = async (key) => {
     const postsData = await (
-      await fetch(`/hr/${key.queryKey[1]}`, {
+      await fetch(`https://hr-system-production.up.railway.app/hr/${key.queryKey[1]}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${key.queryKey[2].token}`,

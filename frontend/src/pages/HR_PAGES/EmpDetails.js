@@ -23,7 +23,7 @@ const EmpDetails = () => {
     try {
       
       const res = await axios.post(
-        "http://localhost:3000/hr/employee/search",
+        "https://hr-system-production.up.railway.app/hr/employee/search",
         { data: { _id: userId } },
     
         {
@@ -87,7 +87,7 @@ const EmpDetails = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/hr/employee/payroll/add",
+        "https://hr-system-production.up.railway.app/hr/employee/payroll/add",
         { data: Paydata },
 
         {

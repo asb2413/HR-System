@@ -48,7 +48,7 @@ function EmpCard() {
     <div className="EmpCard">
     <div className="result-container">
     <SearchBar />
-    <Link  to={`/hr/employee/${empData.res.data._id}`} className="box">
+    <Link  to={`https://hr-system-production.up.railway.app//hr/employee/${empData.res.data._id}`} className="box">
     <Card border="secondary" style={{ width: "18rem" }}>
       <Card.Header>
         <ImUserTie />

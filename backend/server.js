@@ -15,8 +15,9 @@ server.use(cors({
   credentials:true,
 
 }))
-server.use
+
 //hr routes
+
 server.use("/hr", userRouter);
 server.use("/hr", homeRouter);
 //employee routes

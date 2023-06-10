@@ -27,7 +27,7 @@ function EmpLogin() {
     };
 
     //signup function accsept 3 parameters and post it to back-end for login
-    await login(infos, "/emp/login",setjsonMsg);
+    await login(infos, "https://hr-system-production.up.railway.app/emp/login",setjsonMsg);
   };
 
   return (
