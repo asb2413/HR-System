@@ -14,14 +14,14 @@ function EmpCard() {
 
   };
 
-  if(empData && empData.length > 1 ){
+  if(empData && empData.length >= 1 ){
 
     return(
       <div className="EmpCard">
         <div className="container">
         <SearchBar />
         {empData.map((emp) => (
-            <Link key={emp._id} to={`/hr/employee/${emp._id}`} className="box">
+            <Link key={emp._id} to={`https://hr-system-production.up.railway.app/hr/employee/${emp._id}`} className="box">
               <Card border="secondary" style={{ width: "18rem" }}>
                 <Card.Header>
                   <ImUserTie />
@@ -48,7 +48,7 @@ function EmpCard() {
     <div className="EmpCard">
     <div className="result-container">
     <SearchBar />
-    <Link  to={`https://hr-system-production.up.railway.app//hr/employee/${empData.res.data._id}`} className="box">
+    <Link  to={`https://hr-system-production.up.railway.app/hr/employee/${empData.res.data._id}`} className="box">
     <Card border="secondary" style={{ width: "18rem" }}>
       <Card.Header>
         <ImUserTie />

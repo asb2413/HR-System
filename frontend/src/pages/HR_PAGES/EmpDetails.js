@@ -17,9 +17,10 @@ const EmpDetails = () => {
   const [data, setdata] = useState(null)
   const [successfully, setSuccessfully] = useState(null)
   const user = JSON.parse(localStorage.getItem("user"));
+  
   const { userId } = useParams();
   const getEmp= async(userId)=>{
-      
+    if(user){
     try {
       
       const res = await axios.post(
@@ -42,7 +43,7 @@ const EmpDetails = () => {
       
       console.log(error)
     }
-        
+  }
     
       }
     

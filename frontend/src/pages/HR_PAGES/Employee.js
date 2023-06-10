@@ -32,6 +32,7 @@ function Employee() {
 
   useEffect(() => {
     if (data) {
+      console.log(data)
       dispatch({ type: "ALL", payload: data });
     }
   }, [data]);
