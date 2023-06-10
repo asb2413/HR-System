@@ -11,7 +11,7 @@ const EmphomeRouter = require("./routes/EMP routes/home");
 server.use(express.json());
 server.use(cors({
 
-  origin:"*",
+  origin:"https://6484eb596038ce23e54f671a--keen-dolphin-8b5927.netlify.app",
   credentials:true,
 
 }))
