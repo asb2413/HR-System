@@ -135,7 +135,7 @@ const requestApi = async (req, res) => {
   if (emp_id) {
     
     try {
-      const request = await REQUEST.find({ emp_id });
+      const request = await REQUEST.find({ Emp_id:emp_id });
       res.status(200).json(request);
     } catch (error) {
       res.status(400).json({ error: error.message });

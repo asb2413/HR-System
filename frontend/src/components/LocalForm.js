@@ -240,7 +240,7 @@ function LocalForm(props) {
     );
   }
 
-  //login form
+  //hr login form
   if (props.path === "/hr/login") {
     return (
       <Form className="form_container" onSubmit={props.handleSubmit}>
@@ -310,7 +310,7 @@ function LocalForm(props) {
               </Link>
             </Col>
             <Col className="col" xs={12} md={6}>
-              <Link to={"#"}>
+              <Link to={"/emp/login"}>
                 <Button id="empPortal" variant="primary">
                   Employee
                 </Button>
@@ -693,6 +693,9 @@ function LocalForm(props) {
   if (props.comp === "addPayroll") {
     return (
       <Form onSubmit={props.handleSubmit}>
+        {props.successfully&&<Form.Label
+        style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none',textAlign:'center',borderRadius:'13px'}}
+        >{props.successfully}</Form.Label>}
         <Form.Group className="mb-3" controlId="baseSalary">
           <Form.Label>Base Salary</Form.Label>
           <Form.Control
@@ -814,11 +817,13 @@ function LocalForm(props) {
   if (props.comp === "addAttendance") {
     return (
       <Form onSubmit={props.handleSubmitAtt}>
-        <Form.Group className="mb-3" controlId="date">
+        {props.successfully&&<Form.Label
+        style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none',textAlign:'center',borderRadius:'13px'}}
+        >{props.successfully}</Form.Label>}
+        <Form.Group className="mb-3" controlId="day">
         <Form.Label>day</Form.Label>
         <Form.Control
           type="text"
-          id="day"
           onChange={(e) => {
             props.day(e.target.value);
           }}
@@ -829,41 +834,37 @@ function LocalForm(props) {
         <Form.Label>date</Form.Label>
         <Form.Control
           type="date"
-          id="date"
           onChange={(e) => {
             props.date(e.target.value);
           }}
           required
         />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="date">
+        <Form.Group className="mb-3" controlId="time">
         <Form.Label>time</Form.Label>
         <Form.Control
           type="time"
-          id="time"
           onChange={(e) => {
             props.time(e.target.value);
           }}
           required
         />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="date">
-        <Form.Label htmlFor="overtime">overtime</Form.Label>
+        <Form.Group className="mb-3" controlId="overtime">
+        <Form.Label>overtime</Form.Label>
         <Form.Control
           type="text"
-          id="overtime"
           onChange={(e) => {
             props.overtime(e.target.value);
           }}
           required
         />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="date">
-        <Form.Label htmlFor="note">note</Form.Label>
+        <Form.Group className="mb-3" controlId="note">
+        <Form.Label >note</Form.Label>
         <Form.Control
           type="text"
           as="textarea"
-          id="note"
           onChange={(e) => {
             props.note(e.target.value);
           }}
@@ -873,5 +874,114 @@ function LocalForm(props) {
       </Form>
     );
   }
+  //EMPPLOYEE-----------------------------------------------------------------------------EMPPLOYEE
+//emp login
+if (props.path === "/emp/login") {
+  return (
+    <Form className="form_container" onSubmit={props.handleSubmit}>
+      <div className="top_bar">
+        <h1>Login</h1>
+      </div>
+      <Container fluid>
+      <Row className=" _1">
+          <Col >
+
+            {props.jsonMsg !== "Logedin" && (
+              <div style={{backgroundColor:'#00334E'}} className="jsonMsg ">
+                <span>{props.jsonMsg}</span>
+              </div>
+            )}
+          </Col>
+        </Row>
+        <Row className=" _2">
+          <Col className="col" xs={12} md={12}>
+            <Form.Group className="mb-3" controlId="username">
+              <Form.Label> Username</Form.Label>
+              <Form.Control
+                onChange={(e) => {
+                  Username.setUsername(e.target.value);
+                }}
+                value={Username.username}
+                type="text"
+                autoComplete="off"
+                className="shadow-none"
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row className=" _3">
+          <Col className="col" xs={12} md={12}>
+            <Form.Group className="mb-3" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                onChange={(e) => {
+                  Password.setPassword(e.target.value);
+                }}
+                value={Password.password}
+                type="password"
+                autoComplete="off"
+                className="shadow-none"
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row className="_7">
+          <Col className="col" md={12}>
+            <Button variant="primary" type="submit">
+              Login
+            </Button>
+          </Col>
+        </Row>
+        <Row className=" _8">
+          <Col className="col" xs={12} md={12}>
+            <Link to={"/hr/login"}>
+              <Button id="signUpBtn" variant="primary">
+               HR PORTAL
+              </Button>
+            </Link>
+          </Col>
+         
+        </Row>
+      </Container>
+    </Form>
+  );
+}
+if (props.comp === "addRequest") {
+  return (
+    <Form onSubmit={props.addRequest}>
+      {props.successfully&&<Form.Label
+        style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none',textAlign:'center',borderRadius:'13px'}}
+        >{props.successfully}</Form.Label>}
+      <Form.Group className="mb-3" controlId="Type">
+      <Form.Label>Type</Form.Label>
+      <Form.Control
+        type="text"
+        onChange={(e) => {
+          props.type(e.target.value);
+        }}
+        required
+      />
+      </Form.Group>
+     
+     
+      <Form.Group className="mb-3" controlId="Details">
+      <Form.Label >Details</Form.Label>
+      <Form.Control
+        type="text"
+        as="textarea"
+        required
+        onChange={(e) => {
+          props.details(e.target.value);
+        }}
+      />
+      </Form.Group>
+      <Button  style={{width:'100%',backgroundColor:'#00334E',color:"white",border:'none'}} type="submit">add</Button>
+    </Form>
+  );
+}
 }
 export default LocalForm;

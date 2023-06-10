@@ -17,9 +17,7 @@ function Sections() {
             </div>
             
             <span className="text">
-              From this page, you can register new employees 
-               in the system.
-               Only HR accounts can use this page.
+            This page allows you to register new employees into the system. Please note that only HR accounts are authorized to access this page.
             </span>
           </div>
           <Link to={'/hr/addemp'}>
@@ -40,9 +38,7 @@ function Sections() {
             </div>
             
             <span className="text">
-              From this page, you can register new employees 
-               in the system.
-               Only HR accounts can use this page.
+            This section provides access to employee information and allows you to add more details.
             </span>
           </div>
           <Link to={'/hr/employee'}>
@@ -64,9 +60,7 @@ function Sections() {
             </div>
             
             <span className="text">
-              From this page, you can register new employees 
-               in the system.
-               Only HR accounts can use this page.
+            This section shows your profile.
             </span>
           </div>
           <Link to={'/hr/myProfile'}>

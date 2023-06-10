@@ -5,6 +5,7 @@ import "./index.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 //context
 import { AuthContextProvider } from './context/HR-context/authContext'
+import { EmpAuthContextProvider } from './context/EMP-context/empAuthContext';
 import { FormContextProvider } from './context/HR-context/formContext'
 import { AddContextProvider } from './context/HR-context/addEmpContext'
 //react query
@@ -22,7 +23,7 @@ root.render(
 
   //to cover all components for context
 
-
+  <EmpAuthContextProvider>
     <AuthContextProvider>
       <FormContextProvider>
        <AddContextProvider>
@@ -33,7 +34,7 @@ root.render(
        </AddContextProvider>
       </FormContextProvider>
     </AuthContextProvider>
-    
+    </EmpAuthContextProvider>
 
 
 );

@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useGetInfo } from "../../hooks/useGetInfo";
+import '../../style/myProfile/myProfile.css'
+import Navebar from "../../components/Navbar";
 
 function MyProfile() {
   /*getInfo function takes 3 parameaters url, the user token,and if you need to set in body
@@ -21,13 +23,14 @@ function MyProfile() {
   );
 
   return (
-    <div className="myProfule">
+    <div className="myProfile">
+      <Navebar/>
       {data && (
-        <div className="info">
-          <h1>{data._id}</h1>
-          <h1>{data.username}</h1>
-          <h1>{data.email}</h1>
-          <h1>{data.phone}</h1>
+        <div className="info-container">
+          <h1>id: {data._id}</h1>
+          <h1>username: {data.username}</h1>
+          <h1>email: {data.email}</h1>
+          <h1>phone: {data.phone}</h1>
         </div>
       )}
     </div>

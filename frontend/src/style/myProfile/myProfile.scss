@@ -1,0 +1,33 @@
+.myProfile{
+height: 100vh;
+display: flex;
+align-items: center;
+
+    .info-container{
+        width: 100%;
+        background-color: #dadada;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+
+        h1{
+
+            background-color:#00334e;
+            border-radius: 8px;
+            width: 50%;
+            text-align: center;
+            font-weight: 700;
+            font-size: 22px;
+            color: white;
+
+
+        }
+        
+
+    }
+
+}

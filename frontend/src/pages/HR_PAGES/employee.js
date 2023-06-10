@@ -3,6 +3,7 @@ import { createContext, useReducer, useEffect } from "react";
 import { useGetInfo } from "../../hooks/useGetInfo";
 import EmpCards from "../../components/EmpCards";
 import '../../style/employee/employee.css'
+import Navebar from "../../components/Navbar";
 
 export const EmpContext = createContext();
 
@@ -37,6 +38,7 @@ function Employee() {
 
   return (
     <div className="employee">
+      <Navebar/>
       <EmpContext.Provider value={{ ...state, dispatch, data }}>
         <EmpCards />
       </EmpContext.Provider>

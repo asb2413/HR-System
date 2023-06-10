@@ -2,9 +2,9 @@ const express = require("express");
 const homeRouter = express.Router();
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
-
-//controllers
 const requireAuth = require("../../middleware/requireAuth");
+//controllers
+
 const { home } = require("../../controllers/HRcontrollers/homeController");
 const { addEmp } = require("../../controllers/HRcontrollers/empUserController");
 const {

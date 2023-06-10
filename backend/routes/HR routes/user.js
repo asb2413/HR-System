@@ -4,7 +4,6 @@ const userRouter = express.Router();
 const {
   signup,
   login,
-  userData,
 } = require("../../controllers/HRcontrollers/userController");
 
 // signup route

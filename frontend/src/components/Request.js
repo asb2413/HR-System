@@ -13,7 +13,7 @@ const Request = (props) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const { data, status, refetch } = useQuery(
-    ["user", "/employee/request/show", user, { emp_id: props.userId }],
+    ["user", "/employee/request/show", user,  {emp_id:props.props} ],
     getInfo
   );
 
@@ -65,11 +65,11 @@ const Request = (props) => {
                 <td>{req.reqStatus}</td>
                 
                 <td>
-                  <Button value={'accepted'} onClick={(e) => handlesubmit(e, req._id)}>
-                    accept
+                  <Button style={{backgroundColor:'#00334E',color:"white",border:'none'}} value={'accepted'} onClick={(e) => handlesubmit(e, req._id)}>
+                    accepted
                   </Button>
-                  <Button value={'rejected'} onClick={(e) => handlesubmit(e, req._id)}>
-                    reject
+                  <Button style={{backgroundColor:'#00334E',color:"white",border:'none'}} value={'rejected'} onClick={(e) => handlesubmit(e, req._id)}>
+                    rejected
                   </Button>
                 </td>
                 <td>

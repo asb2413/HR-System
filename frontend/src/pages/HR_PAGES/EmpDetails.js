@@ -7,6 +7,7 @@ import Request from "../../components/Request";
 import LocalForm from "../../components/LocalForm";
 import { ImUserTie } from "react-icons/im";
 import { BiMoney,BiCalendar,BiIdCard,BiListCheck } from "react-icons/bi";
+import Navebar from "../../components/Navbar";
 
 import "../../style/EmpDetails/empDetails.css";
 import ShowEmpProfile from "../../components/ShowEmpProfile";
@@ -14,7 +15,7 @@ import ShowEmpProfile from "../../components/ShowEmpProfile";
 
 const EmpDetails = () => {
   const [data, setdata] = useState(null)
-  
+  const [successfully, setSuccessfully] = useState(null)
   const user = JSON.parse(localStorage.getItem("user"));
   const { userId } = useParams();
   const getEmp= async(userId)=>{
@@ -38,6 +39,7 @@ const EmpDetails = () => {
       
         
     } catch (error) {
+      
       console.log(error)
     }
         
@@ -95,7 +97,15 @@ const EmpDetails = () => {
           },
         }
       );
+
+      setSuccessfully('successfully')
+      setTimeout(()=>{
+
+        setSuccessfully(null)
+
+      },4000)
     } catch (error) {
+      
       console.log(error);
     }
   };
@@ -125,13 +135,21 @@ const EmpDetails = () => {
           },
         }
       );
+      setSuccessfully('successfully')
+      setTimeout(()=>{
+        
+        setSuccessfully(null)
+
+      },4000)
     } catch (error) {
+      
       console.log(error);
     }
   };
 
   return (
     <div className="empDetails">
+      <Navebar/>
       <div className="sidebar">
       <div className="info">
             <ImUserTie />
@@ -204,6 +222,7 @@ const EmpDetails = () => {
       <div className="container">
         {comp === "addPayroll" && (
           <LocalForm
+            successfully={successfully}
             comp={comp}
             handleSubmit={handleSubmit}
             baseSalary={setBaseSalary}
@@ -221,6 +240,7 @@ const EmpDetails = () => {
 
         {comp === "addAttendance" && (
           <LocalForm
+          successfully={successfully}
             comp={comp}
             handleSubmitAtt={handleSubmitAtt}
             day={setDay}

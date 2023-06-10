@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const requestSchema = new mongoose.Schema(
   {
-    emp_id: {
+    Emp_id: {
       type: String,
       required: true,
     },
@@ -23,25 +23,26 @@ const requestSchema = new mongoose.Schema(
 
     reqStatus: {
       type: String,
+      default:'pending'
     },
 
   },
   { timestamps: true }
 );
 
-requestSchema.statics.attendance = async function (
-  emp_id,
+requestSchema.statics.request = async function (
+  Emp_id,
   hr_id,
   type,
   details,
-  reqStatus
+  reqStatus,
 ) {
-  if (!type || !date || !details) {
+  if (!type || !details) {
     throw Error("fileds must be fill");
   }
 
   const empRequest = await this.create({
-    emp_id,
+    Emp_id,
     hr_id,
     type,
     details,

@@ -2,18 +2,24 @@ import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../imgs/logo-nodejs-2.svg";
 import logout from "../imgs/box-arrow-right.svg";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useEmpAuthContext } from "../hooks/useEmpAuthContext";
+import '../style/navbar/navbar.css'
 
-function Navebar() {
-  const { user, dispatch } = useAuthContext();
+function EmpNavebar() {
+  const { empUser, empDispatch } = useEmpAuthContext();
 
   const handelClick = () => {
-    localStorage.removeItem("user");
-    dispatch({ type: "LOGOUT" });
+    if(empUser){
+
+      localStorage.removeItem("empUser");
+      empDispatch({ type: "LOGOUT" });
+      
+    }
+       
   };
 
   return (
-    <Navbar className="position-sticky navbar">
+    <Navbar className="navbar">
       <Container>
         <div className="left-group">
           <div className="logo">
@@ -22,16 +28,16 @@ function Navebar() {
             </Link>
           </div>
           <span className="line"></span>
-          <div className="pageName">
-            <span>HOME</span>
+          <div className="homePage">
+            <Link to={"/emp"}><span>HOME</span></Link>
           </div>
         </div>
         <div className="right-group ">
           <div className="text-info" >
-        <span className="text">USER</span>
+        <span className="text">user</span>
         <span className="line"></span>
           
-          {user && <span className="username">{user.Username}</span>}
+          {empUser && <span className="username">{empUser.Username }</span>}
           
           </div>
           
@@ -45,4 +51,4 @@ function Navebar() {
     </Navbar>
   );
 }
-export default Navebar;
+export default EmpNavebar;

@@ -2,8 +2,12 @@
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
   font-family: "Roboto", sans-serif;
   width: 100%;
+  position: relative;
+  display: flex;
+  height: 100vh;
 }
 .addEmp .add_emp {
+  background-color: #e9ebec;
   width: 100%;
   min-height: 84vh;
   display: flex;
@@ -13,7 +17,6 @@
 @media only screen and (max-width: 767px) {
   .addEmp .add_emp {
     align-items: start;
-    min-height: 180vh;
   }
 }
 .addEmp .add_emp input:-webkit-autofill,
@@ -36,29 +39,18 @@
   background-color: rgba(0, 51, 78, 0.1725490196);
 }
 .addEmp .add_emp .form_container {
+  display: flex;
+  align-items: center;
   height: 80vh;
   width: 90%;
   background-color: white;
   border-radius: 15px;
+  overflow-x: auto;
 }
 @media only screen and (max-width: 767px) {
   .addEmp .add_emp .form_container {
     align-items: start;
-    min-height: 230vh;
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .addEmp .add_emp .form_container {
-    align-items: start;
-    min-height: 230vh;
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .addEmp .add_emp .form_container {
-    align-items: start;
-    min-height: 220vh;
+    margin-top: 65.5px;
     width: 80%;
   }
 }

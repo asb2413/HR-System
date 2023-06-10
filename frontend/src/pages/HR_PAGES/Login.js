@@ -26,8 +26,8 @@ function Login() {
       password: Password.password,
     };
 
-    //signup function accsept 2 parameters and post it to back-end for login
-    await login(infos, "login",setjsonMsg);
+    //signup function accsept 3 parameters and post it to back-end for login
+    await login(infos, "/hr/login",setjsonMsg);
   };
 
   return (

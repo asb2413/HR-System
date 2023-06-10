@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import Sections from "../../components/Sections";
 import '../../style/home/home.css'
+import Navebar from "../../components/Navbar";
 
 function Home() {
+  
   const user = JSON.parse(localStorage.getItem("user"));
-
+  const empUser = JSON.parse(localStorage.getItem("empUser"));
 
   useEffect(() => {
     const postToken = async () => {
@@ -29,6 +31,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Navebar/>
       <Sections />
     </div>
   );

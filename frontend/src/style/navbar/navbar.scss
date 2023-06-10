@@ -1,0 +1,130 @@
+.navbar {
+    position: absolute !important;
+    top: 0;
+    background-color: #00334e;
+    width: 100%;
+    .container {
+      max-width: 100%;
+      margin: 0;
+      .left-group {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .line{
+  
+            background-color: #E44444;
+            width: 1px;
+            height: 35px;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
+  
+        }
+        .logo {
+          a {
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 15px;
+              background-color: white;
+            }
+          }
+        }
+  
+        .homePage{
+  
+          a{
+            text-decoration: none;
+            span{
+              font-family: "Roboto", sans-serif;
+              color:#E44444 ;
+
+          }
+
+          @media only screen and (max-width: 800px) {
+              display: none
+            }
+
+
+          }
+            
+        }
+      }
+  
+      .right-group{
+  
+        width: 25%;
+        display: flex;
+        align-items: center;
+        column-gap: 30%;
+        
+    @media only screen and (max-width: 1000px) {
+        column-gap: 20%;
+        width: 40%;
+      }
+        .text-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+        .line{
+  
+            background-color: #E44444;
+            width: 1px;
+            height: 35px;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
+  
+        }
+  
+        .text{
+            font-family: "Roboto", sans-serif;
+            color: white;
+            @media only screen and (max-width: 800px) {
+                display: none
+              }
+        }
+  
+        .username{
+  
+                font-family: "Roboto", sans-serif;
+                color: white;
+                font-weight: 400;
+                text-transform: uppercase;
+  
+        }
+  
+        .logout{
+  
+            display: flex;
+            align-items: center;
+            column-gap: 1px;
+            
+            
+                img{
+                    width: 20px; 
+                    height: 20px;
+                    
+                    
+                }
+  
+                span{
+  
+                    font-family: "Roboto", sans-serif;
+                    color: #E44444;
+                    font-size: 16px;
+                    cursor:context-menu;
+  
+                }
+  
+            
+            
+        }
+      }
+    }
+  }
+  
+  

@@ -3,7 +3,7 @@ export const useLogin = () => {
   //post the data and get the token
   const { dispatch } = useAuthContext();
   const login = async (infos, URL,setjsonMsg) => {
-    const res = await fetch(`/hr/${URL}`, {
+    const res = await fetch(`${URL}`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(infos),

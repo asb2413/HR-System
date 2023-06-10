@@ -3,8 +3,8 @@ import { useAddEmp } from "../../hooks/useAddEmp";
 import LocalForm from "../../components/LocalForm";
 import { useFormContext } from "../../hooks/useFormStatesContext";
 import { useEmpUploads } from "../../hooks/useEmpUploads";
-import { useAddEmpContext } from "../../hooks/useAddEmpContext";
 import '../../style/addemp/addemp.css'
+import Navebar from "../../components/Navbar";
 function AddEmp() {
  
   //path for LocalForm
@@ -83,9 +83,10 @@ function AddEmp() {
   };
 
   return (
-    //a lot of props data :
-
+   
+    
     <div className="addEmp">
+      <Navebar/>
       <LocalForm
         handleSubmit={handleSubmit}
         handleImg={handleImg}
