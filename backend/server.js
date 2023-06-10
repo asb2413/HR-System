@@ -17,7 +17,6 @@ server.use(cors({
 }))
 
 //hr routes
-
 server.use("/hr", userRouter);
 server.use("/hr", homeRouter);
 //employee routes

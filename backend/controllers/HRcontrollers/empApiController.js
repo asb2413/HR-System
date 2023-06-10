@@ -5,10 +5,12 @@ const ATTENDANCE = require("../../models/attendanceModel");
 const REQUEST = require("../../models/requestModel.");
 
 const getAllEmp = async (req, res) => {
+  console.log(req.path)
   try {
     const user_infos = await EMP_USER.find().select({ password: 0 });
 
     res.status(200).json(user_infos);
+    console.log(user_infos)
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
