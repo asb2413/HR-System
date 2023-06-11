@@ -18,8 +18,7 @@ const getAllEmp = async (req, res) => {
 
 const empSearchApi = async (req, res) => {
   const { data } = req.body;
-  console.log(req.path,req.body)
-  console.log('body'+ req.body)
+  
   if (data) {
     try {
       const user_infos = await EMP_USER.findOne({ ...data });

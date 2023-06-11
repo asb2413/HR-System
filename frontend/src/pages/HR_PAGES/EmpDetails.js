@@ -8,19 +8,21 @@ import LocalForm from "../../components/LocalForm";
 import { ImUserTie } from "react-icons/im";
 import { BiMoney,BiCalendar,BiIdCard,BiListCheck } from "react-icons/bi";
 import Navebar from "../../components/Navbar";
-
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "../../style/EmpDetails/empDetails.css";
 import ShowEmpProfile from "../../components/ShowEmpProfile";
+
+
 
 
 const EmpDetails = () => {
   const [data, setdata] = useState(null)
   const [successfully, setSuccessfully] = useState(null)
-  const user = JSON.parse(localStorage.getItem("user"));
   
+  const user = JSON.parse(localStorage.getItem("user"));
   const { userId } = useParams();
   const getEmp= async(userId)=>{
-    if(user){
+    
     try {
       
       const res = await axios.post(
@@ -43,11 +45,11 @@ const EmpDetails = () => {
       
       console.log(error)
     }
-  }
+  
     
       }
     
-    
+      
       
   useEffect(() => {
 
