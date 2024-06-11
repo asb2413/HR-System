@@ -26,7 +26,7 @@ const EmpDetails = () => {
     try {
       
       const res = await axios.post(
-        "https://hr-system-production.up.railway.app/hr/employee/search",
+        "https://hr-system-gamma.vercel.app/hr/employee/search",
         { data: { _id: userId } },
     
         {
@@ -90,7 +90,7 @@ const EmpDetails = () => {
 
     try {
       const res = await axios.post(
-        "https://hr-system-production.up.railway.app/hr/employee/payroll/add",
+        "https://hr-system-gamma.vercel.app/hr/employee/payroll/add",
         { data: Paydata },
 
         {
@@ -128,7 +128,7 @@ const EmpDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hr-system-production.up.railway.app/hr/employee/attendance/add",
+        "https://hr-system-gamma.vercel.app/hr/employee/attendance/add",
         { data: Attdata },
 
         {

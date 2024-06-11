@@ -7,10 +7,10 @@ function Footer() {
 
         <div className="left-group">
           <div className="social">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/abdullah-s-bouladame-8811731a3/">
             <img src={linkdin} alt="" />
             </a>
-            <a href="#">
+            <a href="https://github.com/asb2413">
             <img src={github} alt="" />
             </a>
           </div>

@@ -27,7 +27,7 @@ function Login() {
     };
 
     //signup function accsept 3 parameters and post it to back-end for login
-    await login(infos, "https://hr-system-production.up.railway.app/hr/login",setjsonMsg);
+    await login(infos, "https://hr-system-gamma.vercel.app/hr/login",setjsonMsg);
   };
 
   return (
