@@ -1,7 +1,7 @@
 export const useSignup = () => {
   //post the data hook
   const signup = async (infos, URL,setjsonMsg) => {
-    const res = await fetch(`https://hr-system-gamma.vercel.app/hr/${URL}`, {
+    const res = await fetch(`hr-system-asb2413s-projects.vercel.app/hr/${URL}`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(infos),

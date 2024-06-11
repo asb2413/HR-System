@@ -90,7 +90,7 @@ const EmpDetails = () => {
 
     try {
       const res = await axios.post(
-        "https://hr-system-gamma.vercel.app/hr/employee/payroll/add",
+        "hr-system-asb2413s-projects.vercel.app/hr/employee/payroll/add",
         { data: Paydata },
 
         {
@@ -128,7 +128,7 @@ const EmpDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hr-system-gamma.vercel.app/hr/employee/attendance/add",
+        "hr-system-asb2413s-projects.vercel.app/hr/employee/attendance/add",
         { data: Attdata },
 
         {

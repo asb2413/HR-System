@@ -28,7 +28,7 @@ export const useAddEmp = () => {
 
   //post data hook
   const addEmp = async (infos, URL) => {
-    const res = await fetch(`https://hr-system-gamma.vercel.app/hr/${URL}`, {
+    const res = await fetch(`hr-system-asb2413s-projects.vercel.app/hr/${URL}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${user.token}`,

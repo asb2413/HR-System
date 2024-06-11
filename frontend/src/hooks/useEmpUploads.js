@@ -12,7 +12,7 @@ export const useEmpUploads = () => {
     formData.append("contract", contract);
     formData.append("id", JSON.stringify(emp_user));
 
-    const res = await fetch(`https://hr-system-gamma.vercel.app/hr/${URL}`, {
+    const res = await fetch(`hr-system-asb2413s-projects.vercel.app/hr/${URL}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${user.token}` },
       body: formData,

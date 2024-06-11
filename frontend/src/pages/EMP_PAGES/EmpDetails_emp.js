@@ -27,7 +27,7 @@ const EmpDetails_emp = () => {
     try {
       
       const res = await axios.post(
-        "https://hr-system-gamma.vercel.app/emp/empdetails/empInfoApi",
+        "hr-system-asb2413s-projects.vercel.app/emp/empdetails/empInfoApi",
         { data:  id },
     
         {
@@ -70,7 +70,7 @@ const EmpDetails_emp = () => {
         
         try {
           const res = await axios.post(
-            "https://hr-system-gamma.vercel.app/emp/empdetails/requests/add",
+            "hr-system-asb2413s-projects.vercel.app/emp/empdetails/requests/add",
             { data: reqData },
     
             {
