@@ -90,7 +90,7 @@ const EmpDetails = () => {
 
     try {
       const res = await axios.post(
-        "hr-system-asb2413s-projects.vercel.app/hr/employee/payroll/add",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/payroll/add",
         { data: Paydata },
 
         {
@@ -128,7 +128,7 @@ const EmpDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "hr-system-asb2413s-projects.vercel.app/hr/employee/attendance/add",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/attendance/add",
         { data: Attdata },
 
         {

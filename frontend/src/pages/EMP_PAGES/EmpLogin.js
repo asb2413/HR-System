@@ -27,7 +27,7 @@ function EmpLogin() {
     };
 
     //signup function accsept 3 parameters and post it to back-end for login
-    await login(infos, "hr-system-asb2413s-projects.vercel.app/emp/login",setjsonMsg);
+    await login(infos, "https://hr-system-757a8f8b9dbd.herokuapp.com/emp/login",setjsonMsg);
   };
 
   return (

@@ -9,7 +9,7 @@ function EmpHome() {
   useEffect(() => {
     const postToken = async () => {
       if (empUser) {
-        const res = await fetch("hr-system-asb2413s-projects.vercel.app/emp", {
+        const res = await fetch("https://hr-system-757a8f8b9dbd.herokuapp.com/emp", {
           method: "POST",
           headers: { Authorization: `Bearer ${empUser.token}` },
         });
