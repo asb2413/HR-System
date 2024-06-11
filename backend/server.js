@@ -3,7 +3,6 @@ const server = express();
 const cors = require('cors')
 require("dotenv").config();
 const mongoose = require("mongoose");
-const port = process.env.PORT || 4000;
 mongoose.set("strictQuery", false);
 const userRouter = require("./routes/HR routes/user");
 const homeRouter = require("./routes/HR routes/home");
