@@ -1,4 +1,11 @@
 {
+
+  "scripts": {
+
+    "start": "node server.js"
+
+  },
+
   "dependencies": {
     "@tanstack/react-query": "^4.29.1",
     "@tanstack/react-query-devtools": "^4.29.1",
