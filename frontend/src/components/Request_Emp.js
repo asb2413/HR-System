@@ -19,7 +19,7 @@ const Request_Emp = (props) => {
     try {
       
       const res = await axios.post(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/emp/empdetails/requests",
+        "https://hr-system-iy2g.onrender.com/emp/empdetails/requests",
         { data:  id },
     
         {

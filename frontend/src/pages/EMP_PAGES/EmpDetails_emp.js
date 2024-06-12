@@ -27,7 +27,7 @@ const EmpDetails_emp = () => {
     try {
       
       const res = await axios.post(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/emp/empdetails/empInfoApi",
+        "https://hr-system-iy2g.onrender.com/emp/empdetails/empInfoApi",
         { data:  id },
     
         {
@@ -70,7 +70,7 @@ const EmpDetails_emp = () => {
         
         try {
           const res = await axios.post(
-            "https://hr-system-757a8f8b9dbd.herokuapp.com/emp/empdetails/requests/add",
+            "https://hr-system-iy2g.onrender.com/emp/empdetails/requests/add",
             { data: reqData },
     
             {

@@ -18,7 +18,7 @@ function SearchBar() {
     
     try {
       const res = await axios.post(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/search",
+        "https://hr-system-iy2g.onrender.com/hr/employee/search",
         { data: { [type.current]: search.current } },
 
         {

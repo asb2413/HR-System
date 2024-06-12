@@ -1,7 +1,7 @@
 export const useSignup = () => {
   //post the data hook
   const signup = async (infos, URL,setjsonMsg) => {
-    const res = await fetch(`https://hr-system-757a8f8b9dbd.herokuapp.com/hr/${URL}`, {
+    const res = await fetch(`https://hr-system-iy2g.onrender.com/hr/${URL}`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(infos),

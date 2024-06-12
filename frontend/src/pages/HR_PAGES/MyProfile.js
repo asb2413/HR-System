@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
-import { useAuthContext } from "../../hooks/useAuthContext";
+
 import { useGetInfo } from "../../hooks/useGetInfo";
 import '../../style/myProfile/myProfile.css'
 import Navebar from "../../components/Navbar";
@@ -17,7 +16,7 @@ function MyProfile() {
      if yes it make the useQuery enabled true so it will be fetch the data
     */
 
-  const { data, status } = useQuery(
+  const { data } = useQuery(
     ["user", "/myProfile", user, user],
     getInfo
   );

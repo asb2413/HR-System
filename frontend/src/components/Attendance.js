@@ -26,7 +26,7 @@ const Attendance = (props) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/attendance/add",
+        "https://hr-system-iy2g.onrender.com/hr/employee/attendance/add",
         { data: data },
 
         {

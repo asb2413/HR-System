@@ -28,7 +28,7 @@ export const useAddEmp = () => {
 
   //post data hook
   const addEmp = async (infos, URL) => {
-    const res = await fetch(`https://hr-system-757a8f8b9dbd.herokuapp.com/hr/${URL}`, {
+    const res = await fetch(`https://hr-system-iy2g.onrender.com/hr/${URL}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${user.token}`,

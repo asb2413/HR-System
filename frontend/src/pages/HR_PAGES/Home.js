@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const postToken = async () => {
       if (user) {
-        const res = await fetch("https://hr-system-757a8f8b9dbd.herokuapp.com/hr", {
+        const res = await fetch("https://hr-system-iy2g.onrender.com/hr", {
           method: "POST",
           headers: { Authorization: `Bearer ${user.token}` },
         });

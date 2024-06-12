@@ -23,7 +23,7 @@ const Request = (props) => {
     console.log(request_id,e.target.value)
     try {
       const res = await axios.patch(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/request/update",
+        "https://hr-system-iy2g.onrender.com/hr/employee/request/update",
         { data: request_id,reqStatus:e.target.value,action_user:user.Username},
         {
           headers: {

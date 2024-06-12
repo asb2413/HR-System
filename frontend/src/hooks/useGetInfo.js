@@ -1,7 +1,7 @@
 export const useGetInfo = () => {
   const getInfo = async (key) => {
     const postsData = await (
-      await fetch(`https://hr-system-757a8f8b9dbd.herokuapp.com/hr/${key.queryKey[1]}`, {
+      await fetch(`https://hr-system-iy2g.onrender.com/hr/${key.queryKey[1]}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${key.queryKey[2].token}`,

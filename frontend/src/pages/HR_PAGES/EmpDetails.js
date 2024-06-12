@@ -90,7 +90,7 @@ const EmpDetails = () => {
 
     try {
       const res = await axios.post(
-        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/payroll/add",
+        "https://hr-system-iy2g.onrender.com/hr/employee/payroll/add",
         { data: Paydata },
 
         {
@@ -128,7 +128,7 @@ const EmpDetails = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        " https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/attendance/add",
+        "https://hr-system-iy2g.onrender.com/hr/employee/attendance/add",
         { data: Attdata },
 
         {
