@@ -14,7 +14,7 @@ const ShowPayroll_Emp = (props) => {
     try {
       
       const res = await axios.post(
-        "https://hr-system-production.up.railway.app/emp/empdetails/payroll",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/emp/empdetails/payroll",
         { data:  id },
     
         {

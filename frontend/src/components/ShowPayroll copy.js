@@ -20,7 +20,7 @@ const ShowPayroll = (props) => {
 
     try {
       const res = await axios.delete(
-        "http://localhost:3000/hr/employee/payroll/delete",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/payroll/delete",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

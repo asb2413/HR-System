@@ -35,7 +35,7 @@ const PayRoll = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/hr/employee/payroll/add",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/payroll/add",
         { data: data },
 
         {

@@ -18,7 +18,7 @@ const ShowAttendance = (props) => {
 
     try {
       const res = await axios.delete(
-        "http://localhost:3000/hr/employee/attendance/delete",
+        "https://hr-system-757a8f8b9dbd.herokuapp.com/hr/employee/attendance/delete",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
